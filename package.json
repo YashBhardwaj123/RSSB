@@ -1,0 +1,20 @@
+{
+  "name": "rssb-computer-operator-quiz",
+  "version": "1.0.0",
+  "description": "Interactive revision quiz for RSSB Computer Operator 2026 Paper 2 exam preparation containing 100 questions.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "rssb",
+    "computer-operator",
+    "quiz",
+    "revision",
+    "mock-test"
+  ],
+  "author": "Antigravity",
+  "license": "ISC",
+  "dependencies": {}
+}

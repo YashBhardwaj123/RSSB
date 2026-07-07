@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RSSB Computer Operator 2026 Paper 2 Exam Revision Quiz</title>
+  <meta name="description" content="Prepare for the RSSB Computer Operator 2026 Paper 2 Exam with this high-quality interactive revision quiz featuring 100 important questions.">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <!-- Particle Confetti Canvas -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Notification Banner -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Confirmation Modal -->
+  <div id="confirm-modal" class="modal-overlay hidden">
+    <div class="modal-box">
+      <h3 id="modal-title">Submit Exam?</h3>
+      <p id="modal-message">Are you sure you want to end the exam? You have unanswered questions remaining.</p>
+      <div class="modal-actions">
+        <button id="modal-cancel-btn" class="btn btn-secondary">Cancel</button>
+        <button id="modal-confirm-btn" class="btn btn-primary">Yes, Submit</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="app-container">
+    
+    <!-- ========================================== -->
+    <!-- 1. WELCOME VIEW                            -->
+    <!-- ========================================== -->
+    <section id="welcome-view" class="view-panel active">
+      <div class="welcome-card card">
+        <div class="welcome-header">
+          <span class="badge badge-primary">RSSB 2026 Preparation</span>
+          <h1>Computer Operator Paper 2</h1>
+          <h2>Ultimate Revision Mock Test</h2>
+          <p class="subtitle">Elevate your preparation for the RSSB Computer Operator & Instructor exam with 100 high-yield questions aligned with the rigorous 2022 exam level.</p>
+        </div>
+
+        <div class="grid-stats">
+          <div class="stat-card">
+            <span class="stat-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" /></svg>
+            </span>
+            <div class="stat-info">
+              <span class="stat-value">100</span>
+              <span class="stat-label">Important MCQs</span>
+            </div>
+          </div>
+          
+          <div class="stat-card">
+            <span class="stat-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>
+            </span>
+            <div class="stat-info">
+              <span class="stat-value">120 Min</span>
+              <span class="stat-label">Time Limit</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <span class="stat-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m0-10.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286Zm0 13.036h.008v.008H12v-.008Z" /></svg>
+            </span>
+            <div class="stat-info">
+              <span class="stat-value">1/3</span>
+              <span class="stat-label">Negative Marking</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="syllabus-section">
+          <h3>Syllabus Coverage</h3>
+          <div class="syllabus-grid">
+            <div class="syllabus-item"><span class="bullet"></span> Pedagogy & Mental Ability</div>
+            <div class="syllabus-item"><span class="bullet"></span> Computer Fundamentals & Number Systems</div>
+            <div class="syllabus-item"><span class="bullet"></span> Programming (C, C++, Java, Python)</div>
+            <div class="syllabus-item"><span class="bullet"></span> Data Structures & Algorithms</div>
+            <div class="syllabus-item"><span class="bullet"></span> Operating Systems & Computer Organization</div>
+            <div class="syllabus-item"><span class="bullet"></span> Database Management System (DBMS)</div>
+            <div class="syllabus-item"><span class="bullet"></span> Computer Networks & Security</div>
+            <div class="syllabus-item"><span class="bullet"></span> System Analysis & Design & IoT</div>
+          </div>
+        </div>
+
+        <div class="rules-card">
+          <h4>Test Instructions:</h4>
+          <ul>
+            <li>Each correct answer awards <strong>+1.0 mark</strong>.</li>
+            <li>Each incorrect answer carries a penalty of <strong>-0.33 marks</strong>.</li>
+            <li>Unanswered or skipped questions carry <strong>0 marks</strong>.</li>
+            <li>Once you select an option, it will instantly show whether it is correct or incorrect, with an explanation.</li>
+            <li>You can jump to any question using the top navigation bar.</li>
+            <li>Your detailed performance analysis across all subjects will be provided upon submission.</li>
+          </ul>
+        </div>
+
+        <div class="welcome-actions">
+          <button id="start-exam-btn" class="btn btn-primary btn-large btn-glow">
+            Start Practice Test
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="icon-right"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 2. QUIZ VIEW                               -->
+    <!-- ========================================== -->
+    <section id="quiz-view" class="view-panel">
+      <!-- Quiz Header -->
+      <header class="quiz-header card">
+        <div class="header-left">
+          <h3>RSSB Computer Operator 2026</h3>
+          <span class="divider">|</span>
+          <p class="exam-paper">Paper 2 Technical Mock</p>
+        </div>
+        <div class="header-right">
+          <!-- Timer Display -->
+          <div class="timer-container">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="timer-icon"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>
+            <span id="timer-clock" class="timer-clock">02:00:00</span>
+          </div>
+          <button id="submit-exam-btn" class="btn btn-danger">Submit Exam</button>
+        </div>
+      </header>
+
+      <!-- Main Quiz Area -->
+      <div class="quiz-layout">
+        
+        <!-- Navigation Sidebar / Topbar -->
+        <aside class="navigation-panel card">
+          <div class="nav-header">
+            <h4>Question Navigator</h4>
+            <div class="progress-details">
+              <span id="answered-badge" class="badge badge-success">0 Ans</span>
+              <span id="marked-badge" class="badge badge-warning">0 Rev</span>
+            </div>
+          </div>
+          
+          <!-- Horizontal scrollable / Grid container of 1-100 -->
+          <div class="nav-scroll-container">
+            <div id="question-navigator-grid" class="navigator-grid">
+              <!-- Grid items 1-100 generated by JS -->
+            </div>
+          </div>
+
+          <!-- Color Legend -->
+          <div class="nav-legend">
+            <div class="legend-item"><span class="legend-dot legend-unvisited"></span><span class="legend-text">Unvisited</span></div>
+            <div class="legend-item"><span class="legend-dot legend-correct"></span><span class="legend-text">Correct</span></div>
+            <div class="legend-item"><span class="legend-dot legend-wrong"></span><span class="legend-text">Wrong</span></div>
+            <div class="legend-item"><span class="legend-dot legend-review"></span><span class="legend-text">For Review</span></div>
+            <div class="legend-item"><span class="legend-dot legend-skipped"></span><span class="legend-text">Skipped</span></div>
+          </div>
+        </aside>
+
+        <!-- Question View Column -->
+        <main class="question-container">
+          <div class="question-card card">
+            <div class="question-meta">
+              <span id="question-index-label" class="badge badge-primary">Question 1 of 100</span>
+              <span id="question-category-label" class="badge badge-secondary">Operating System</span>
+            </div>
+            
+            <div class="question-text-wrapper">
+              <p id="question-text" class="question-text">Loading question...</p>
+            </div>
+
+            <div id="options-list" class="options-list">
+              <!-- Options elements generated by JS -->
+            </div>
+
+            <!-- Instant Feedback Notification Box -->
+            <div id="instant-feedback-box" class="feedback-box hidden">
+              <div class="feedback-header">
+                <span id="feedback-icon" class="feedback-icon"></span>
+                <h4 id="feedback-title">Correct!</h4>
+              </div>
+              <div class="feedback-body">
+                <p id="feedback-text"></p>
+                <div class="explanation-wrapper">
+                  <h5>Explanation:</h5>
+                  <p id="question-explanation-text"></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Action Controls Row -->
+            <div class="quiz-controls">
+              <div class="controls-left">
+                <button id="prev-btn" class="btn btn-secondary">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="icon-left"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" /></svg>
+                  Previous
+                </button>
+              </div>
+              <div class="controls-center">
+                <button id="review-btn" class="btn btn-warning">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="icon-left"><path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" /></svg>
+                  Mark for Review
+                </button>
+                <button id="skip-btn" class="btn btn-secondary">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="icon-left"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8.25V18a2.25 2.25 0 0 0 2.25 2.25h13.5A2.25 2.25 0 0 0 21 18V8.25m-18 0V6a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 6v2.25m-18 0h18M5.25 6h.008v.008H5.25V6ZM7.5 6h.008v.008H7.5V6Zm2.25 0h.008v.008H9.75V6Z" /></svg>
+                  Skip
+                </button>
+              </div>
+              <div class="controls-right">
+                <button id="next-btn" class="btn btn-primary">
+                  Next
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="icon-right"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5 15.75 12l-7.5 7.5" /></svg>
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </main>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 3. SCORECARD / RESULT VIEW                 -->
+    <!-- ========================================== -->
+    <section id="scorecard-view" class="view-panel">
+      <div class="scorecard-wrapper">
+        
+        <!-- Score Overview Hero -->
+        <div class="score-hero card">
+          <div class="score-hero-content">
+            <span class="badge badge-success">Exam Completed</span>
+            <h2>Your Scorecard</h2>
+            <p class="subtitle">Performance analysis for RSSB Computer Operator 2026 Paper 2 Mock Test</p>
+            
+            <div class="score-display">
+              <div class="score-circle">
+                <span id="final-score" class="final-score-val">0.00</span>
+                <span class="score-out-of">/ 100.00 Marks</span>
+              </div>
+            </div>
+            <p class="negative-marking-notice">Calculated with 1/3 (0.33) negative marking penalty for incorrect responses.</p>
+          </div>
+        </div>
+
+        <!-- Quick Stats Grid -->
+        <div class="stats-overview-grid">
+          <div class="stat-box card border-correct">
+            <span class="stat-number text-correct" id="score-correct-cnt">0</span>
+            <span class="stat-label">Correct Answers</span>
+          </div>
+          <div class="stat-box card border-wrong">
+            <span class="stat-number text-wrong" id="score-wrong-cnt">0</span>
+            <span class="stat-label">Incorrect Answers</span>
+          </div>
+          <div class="stat-box card border-skipped">
+            <span class="stat-number text-skipped" id="score-skipped-cnt">0</span>
+            <span class="stat-label">Skipped / Unanswered</span>
+          </div>
+          <div class="stat-box card border-primary">
+            <span class="stat-number text-primary" id="score-accuracy">0%</span>
+            <span class="stat-label">Accuracy Rate</span>
+          </div>
+        </div>
+
+        <!-- Detailed Syllabus-wise Breakdown -->
+        <div class="analysis-section card">
+          <h3>Subject-wise Analysis</h3>
+          <p class="section-desc">Analyze your performance across different syllabus domains to pinpoint areas needing improvement.</p>
+          <div id="subject-analysis-grid" class="subject-analysis-grid">
+            <!-- Dynamically populated by JS -->
+          </div>
+        </div>
+
+        <!-- Recommendation Panel -->
+        <div id="recommendation-card" class="recommendation-card card">
+          <div class="rec-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.14 4.084A3.75 3.75 0 0 0 12 18Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M8.94 12.41a6.01 6.01 0 0 1 1.9-4.375 6.002 6.002 0 0 1 8.216.025 5.979 5.979 0 0 1 1.902 4.35 3.75 3.75 0 0 1-5.08 3.562 3.75 3.75 0 0 0-6.938-3.562Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 0 0-5.148-3.478M3.02 10.3a12.014 12.014 0 0 1 2.248-4.49 12.008 12.008 0 0 1 13.464 0c.814.547 1.565 1.206 2.247 1.95M19.167 15.152a12.012 12.012 0 0 1-2.247 4.49A12.008 12.008 0 0 1 3.456 19.64a11.956 11.956 0 0 1-2.248-4.49" /></svg>
+          </div>
+          <div class="rec-content">
+            <h4>AI Practice Review Recommendation</h4>
+            <p id="recommendation-text">Analyzing your results...</p>
+          </div>
+        </div>
+
+        <!-- Question Review Filter and Accordion List -->
+        <div class="review-section card">
+          <div class="review-header">
+            <h3>Detailed Question Review</h3>
+            <div class="filter-controls">
+              <button id="filter-all" class="btn btn-filter active">All Questions</button>
+              <button id="filter-incorrect" class="btn btn-filter">Incorrect Only</button>
+              <button id="filter-skipped" class="btn btn-filter">Skipped Only</button>
+            </div>
+          </div>
+          <p class="section-desc">Review explanations for questions you skipped or answered incorrectly to master the concepts.</p>
+          
+          <div id="review-questions-list" class="review-questions-list">
+            <!-- Dynamically populated by JS -->
+          </div>
+        </div>
+
+        <!-- Scorecard actions -->
+        <div class="scorecard-actions">
+          <button id="restart-test-btn" class="btn btn-primary btn-large btn-glow">
+            Retake Mock Test
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="icon-right"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" /></svg>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="questions.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
