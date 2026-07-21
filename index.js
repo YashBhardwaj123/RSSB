@@ -1,6 +1,7 @@
 // ========================================================
 // MULTI-TEST STATE MANAGEMENT & TCS iON EXAM ENGINE
 // Supports: SSC CGL 2026 & IBPS SO IT Officer 2026
+// Features: Fisher-Yates Question & Option Randomization
 // ========================================================
 
 let activeExamKey = "ssc"; // "ssc" or "ibps"
@@ -88,6 +89,33 @@ function playSadTromboneSound() {
 }
 
 // ========================================================
+// RANDOMIZATION ENGINE (FISHER-YATES SHUFFLE)
+// ========================================================
+function shuffleArray(array) {
+  const arr = [...array];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+function prepareRandomizedQuestions(rawQuestions) {
+  const shuffledQuestions = shuffleArray(rawQuestions);
+  return shuffledQuestions.map((q) => {
+    const correctOptionText = q.options[q.correctIndex];
+    const shuffledOptions = shuffleArray(q.options);
+    const newCorrectIndex = shuffledOptions.indexOf(correctOptionText);
+    
+    return {
+      ...q,
+      options: shuffledOptions,
+      correctIndex: newCorrectIndex
+    };
+  });
+}
+
+// ========================================================
 // INITIALIZATION
 // ========================================================
 document.addEventListener("DOMContentLoaded", () => {
@@ -137,7 +165,6 @@ document.addEventListener("DOMContentLoaded", () => {
 window.selectTestTrack = function(examKey) {
   activeExamKey = examKey;
   activeExamConfig = EXAMS_DATA[examKey];
-  activeQuestions = activeExamConfig.questions;
 
   // Toggle active card state
   document.querySelectorAll(".test-card").forEach(card => card.classList.remove("active"));
@@ -174,6 +201,7 @@ window.selectTestTrack = function(examKey) {
   rulesList.innerHTML = `
     <li>Each correct answer awards <strong>+${activeExamConfig.positiveMark.toFixed(2)} mark</strong>. Each incorrect answer carries a <strong>${activeExamConfig.negativeText} marks</strong> penalty.</li>
     <li>Total time allocated: <strong>${activeExamConfig.durationMinutes} minutes</strong> for 100 questions.</li>
+    <li>Questions and answer options are <strong>randomly shuffled</strong> on every examination attempt.</li>
     <li>Click <strong>Save & Next</strong> to lock your answer and proceed to the next question.</li>
     <li>Click <strong>Clear Response</strong> to remove your option selection.</li>
     <li>Click <strong>Save & Mark for Review</strong> or <strong>Mark for Review & Next</strong> to flag questions for review.</li>
@@ -281,6 +309,9 @@ function triggerBadCelebration() {
 function startExam() {
   currentQuestionIndex = 0;
   isExamSubmitted = false;
+
+  // Randomize questions & option orders on every test attempt
+  activeQuestions = prepareRandomizedQuestions(activeExamConfig.questions);
   resetAnswersState();
 
   // Update TCS iON Header
@@ -296,7 +327,7 @@ function startExam() {
   loadQuestion(0);
   startTimer();
   switchView("quiz-view");
-  showToast(`${activeExamConfig.name} started.`, "primary");
+  showToast(`${activeExamConfig.name} started (Randomized order).`, "primary");
 }
 
 function buildNavigatorGrid() {
