@@ -1,7 +1,7 @@
 // ========================================================
 // MULTI-TEST STATE MANAGEMENT & TCS iON EXAM ENGINE
-// Supports: SSC CGL 2026 & IBPS SO IT Officer 2026
-// Features: Fisher-Yates Question & Option Randomization
+// Supports: SSC CGL 2026 Tier 1 Prelims & IBPS SO IT Officer 2026 Prelims
+// Features: 2026 Prelims Marking Rules & Fisher-Yates Randomization
 // ========================================================
 
 let activeExamKey = "ssc"; // "ssc" or "ibps"
@@ -12,7 +12,7 @@ let currentQuestionIndex = 0;
 // userAnswers[i] = { selectedOptionIndex: null|number, status: 'unvisited'|'answered'|'not_answered'|'marked'|'ans_marked', isCorrect: null|boolean }
 let userAnswers = [];
 let timerInterval = null;
-let timeLeft = 120 * 60; // seconds
+let timeLeft = 60 * 60; // seconds
 let isExamSubmitted = false;
 let practiceMode = "instant"; // "instant" or "exam"
 
@@ -183,8 +183,8 @@ window.selectTestTrack = function(examKey) {
   document.getElementById("selected-exam-sub").textContent = activeExamConfig.subName;
   document.getElementById("stat-val-mcqs").textContent = activeExamConfig.questions.length;
   document.getElementById("stat-val-duration").textContent = `${activeExamConfig.durationMinutes} Min`;
-  document.getElementById("stat-val-penalty").textContent = `1/${Math.round(1/activeExamConfig.negativeMark)} (${activeExamConfig.negativeText})`;
-  document.getElementById("stat-label-penalty").textContent = `${examKey.toUpperCase()} Negative Marking`;
+  document.getElementById("stat-val-penalty").textContent = `1/${Math.round(1/(activeExamConfig.negativeMark / activeExamConfig.positiveMark))} (${activeExamConfig.negativeText})`;
+  document.getElementById("stat-label-penalty").textContent = `${examKey.toUpperCase()} Prelims Negative Marking`;
 
   // Render syllabus grid
   const syllabusGrid = document.getElementById("syllabus-grid");
@@ -199,7 +199,7 @@ window.selectTestTrack = function(examKey) {
   // Render rules text
   const rulesList = document.getElementById("rules-list");
   rulesList.innerHTML = `
-    <li>Each correct answer awards <strong>+${activeExamConfig.positiveMark.toFixed(2)} mark</strong>. Each incorrect answer carries a <strong>${activeExamConfig.negativeText} marks</strong> penalty.</li>
+    <li>Each correct answer awards <strong>+${activeExamConfig.positiveMark.toFixed(2)} marks</strong>. Each incorrect answer carries a negative penalty of <strong>${activeExamConfig.negativeText} marks</strong>.</li>
     <li>Total time allocated: <strong>${activeExamConfig.durationMinutes} minutes</strong> for 100 questions.</li>
     <li>Questions and answer options are <strong>randomly shuffled</strong> on every examination attempt.</li>
     <li>Click <strong>Save & Next</strong> to lock your answer and proceed to the next question.</li>
@@ -247,7 +247,7 @@ function startTimer() {
     updateTimerDisplay();
     if (timeLeft <= 0) {
       clearInterval(timerInterval);
-      showToast("Time expired. Submitting examination.", "warning");
+      showToast("Time expired. Submitting preliminary examination.", "warning");
       submitExam();
     }
   }, 1000);
@@ -293,7 +293,7 @@ function triggerBadCelebration() {
   if (!overlay) return;
 
   if (text) text.textContent = `Negative Marking Penalty Applied (${activeExamConfig.negativeText} Marks)`;
-  if (badge) badge.textContent = `${activeExamConfig.id.toUpperCase()} Exam Scheme`;
+  if (badge) badge.textContent = `${activeExamConfig.id.toUpperCase()} Prelims Scheme`;
 
   playSadTromboneSound();
   overlay.classList.remove("hidden");
@@ -327,7 +327,7 @@ function startExam() {
   loadQuestion(0);
   startTimer();
   switchView("quiz-view");
-  showToast(`${activeExamConfig.name} started (Randomized order).`, "primary");
+  showToast(`${activeExamConfig.name} started.`, "primary");
 }
 
 function buildNavigatorGrid() {
@@ -414,7 +414,7 @@ function loadQuestion(index) {
     
     if (state.isCorrect) {
       feedbackBox.className = "feedback-box correct-feedback";
-      feedbackTitle.textContent = `Correct Answer (+${activeExamConfig.positiveMark.toFixed(2)} Mark)`;
+      feedbackTitle.textContent = `Correct Answer (+${activeExamConfig.positiveMark.toFixed(2)} Marks)`;
       feedbackText.textContent = `Selected Option ${alphabet[state.selectedOptionIndex]}.`;
     } else {
       feedbackBox.className = "feedback-box wrong-feedback";
@@ -456,7 +456,7 @@ function handleOptionClick(optIdx) {
     if (state.isCorrect) {
       triggerConfetti();
       playVictorySound();
-      showToast(`Correct Answer (+${activeExamConfig.positiveMark.toFixed(2)} Mark)`, "success");
+      showToast(`Correct Answer (+${activeExamConfig.positiveMark.toFixed(2)} Marks)`, "success");
     } else {
       triggerBadCelebration();
       showToast(`Incorrect Answer (${activeExamConfig.negativeText} Penalty)`, "error");
@@ -625,19 +625,21 @@ function submitExam() {
   document.getElementById("scorecard-exam-title").textContent = activeExamConfig.name;
   document.getElementById("scorecard-exam-sub").textContent = activeExamConfig.subName;
   document.getElementById("final-score").textContent = finalScore.toFixed(2);
+  document.getElementById("score-out-of-label").textContent = `/ ${activeExamConfig.totalMarks.toFixed(2)} Marks`;
   document.getElementById("score-correct-cnt").textContent = correctCount;
+  document.getElementById("score-correct-stat-label").textContent = `Correct (+${activeExamConfig.positiveMark.toFixed(2)} Each)`;
   document.getElementById("score-wrong-cnt").textContent = wrongCount;
   document.getElementById("score-penalty-stat-label").textContent = `Incorrect (${activeExamConfig.negativeText} Each)`;
   document.getElementById("score-skipped-cnt").textContent = skippedCount;
   document.getElementById("score-accuracy").textContent = `${accuracy}%`;
-  document.getElementById("scorecard-penalty-text").textContent = `Calculated with 1/${Math.round(1/activeExamConfig.negativeMark)} (${activeExamConfig.negativeText}) negative marking penalty.`;
+  document.getElementById("scorecard-penalty-text").textContent = `Calculated with 1/${Math.round(1/(activeExamConfig.negativeMark / activeExamConfig.positiveMark))} (${activeExamConfig.negativeText}) negative marking penalty.`;
 
   renderSubjectAnalysis();
   generateRecommendations(correctCount, wrongCount, finalScore);
   filterReviewList("all");
 
   switchView("scorecard-view");
-  showToast("Examination submitted successfully.", "success");
+  showToast("Preliminary examination submitted successfully.", "success");
 }
 
 function renderSubjectAnalysis() {
@@ -726,14 +728,14 @@ function generateRecommendations(correctCount, wrongCount, finalScore) {
   });
 
   let recText = "";
-  if (finalScore >= 70) {
-    recText = `Score of **${finalScore.toFixed(2)}/100**. Excellent command over ${activeExamConfig.name} domains. `;
+  if (finalScore >= (activeExamConfig.totalMarks * 0.7)) {
+    recText = `Score of **${finalScore.toFixed(2)}/${activeExamConfig.totalMarks.toFixed(2)}**. Excellent command over ${activeExamConfig.name} domains. `;
     if (weakTopics.length > 0) recText += `Focus revision on: **${weakTopics.map(w => w.name).join(", ")}**. `;
-  } else if (finalScore >= 40) {
-    recText = `Score of **${finalScore.toFixed(2)}/100**. `;
+  } else if (finalScore >= (activeExamConfig.totalMarks * 0.4)) {
+    recText = `Score of **${finalScore.toFixed(2)}/${activeExamConfig.totalMarks.toFixed(2)}**. `;
     if (weakTopics.length > 0) recText += `Target critical gaps in: **${weakTopics.map(w => w.name).join(", ")}**. `;
   } else {
-    recText = `Score of **${finalScore.toFixed(2)}/100**. `;
+    recText = `Score of **${finalScore.toFixed(2)}/${activeExamConfig.totalMarks.toFixed(2)}**. `;
     if (weakTopics.length > 0) recText += `Systematic study required in: **${weakTopics.map(w => w.name).join(", ")}**. `;
   }
 

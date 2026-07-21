@@ -1,7 +1,7 @@
 // ========================================================
-// EXAMINATION QUESTION BANK DATASTORE
-// 1. SSC CGL 2026 Current Affairs (100 MCQs)
-// 2. IBPS SO IT Officer 2026 Computer Knowledge (100 MCQs)
+// EXAMINATION QUESTION BANK DATASTORE (2026 PRELIMS EXAMS)
+// 1. SSC CGL 2026 Tier 1 (Prelims) Current Affairs (100 MCQs)
+// 2. IBPS SO IT Officer 2026 Prelims Professional Knowledge (100 MCQs)
 // ========================================================
 
 const SSC_CGL_QUESTIONS = [
@@ -822,10 +822,7 @@ const SSC_CGL_QUESTIONS = [
   }
 ];
 
-// ========================================================
-// IBPS SO IT OFFICER 2026 PROFESSIONAL KNOWLEDGE MCQs
-// (100 TOP MCQs for 29 August 2026 Real Exam Focus)
-// ========================================================
+// IBPS SO IT OFFICER 2026 PRELIMS MCQs (100 TOP GUARANTEED MCQs)
 const IBPS_SO_QUESTIONS = [
   // CATEGORY 1: Database Management Systems & SQL (1-15)
   {
@@ -1644,19 +1641,19 @@ const IBPS_SO_QUESTIONS = [
   }
 ];
 
-// EXAMS DATA STORE CONFIGURATION
+// EXAMS DATA STORE CONFIGURATION (2026 PRELIMS EXAM PATTERNS)
 const EXAMS_DATA = {
   ssc: {
     id: "ssc",
-    name: "Staff Selection Commission (SSC CGL 2026)",
-    subName: "Paper I: General Awareness & Current Affairs",
-    labId: "CGL-2026-LAB-01",
-    durationMinutes: 120,
-    positiveMark: 1.00,
-    negativeMark: 0.333333,
-    negativeText: "-0.33",
-    totalMarks: 100,
-    subject: "Current Affairs 100 MCQs",
+    name: "Staff Selection Commission (SSC CGL 2026 Tier 1 Prelims)",
+    subName: "Tier 1 Prelims: General Awareness & Current Affairs (High-Yield 100 MCQs)",
+    labId: "CGL-2026-PRE-LAB-01",
+    durationMinutes: 60,
+    positiveMark: 2.00,
+    negativeMark: 0.50,
+    negativeText: "-0.50",
+    totalMarks: 200,
+    subject: "Tier 1 Prelims GA & Current Affairs 100 MCQs",
     categories: [
       "National Affairs & Government Schemes",
       "International Affairs & Global Summits",
@@ -1671,15 +1668,15 @@ const EXAMS_DATA = {
   },
   ibps: {
     id: "ibps",
-    name: "IBPS SO 2026 (Scale I IT Officer)",
-    subName: "Professional Knowledge: Computer Science & IT (29 August 2026 Exam)",
-    labId: "IBPS-SO-IT-2026-LAB-02",
-    durationMinutes: 60,
-    positiveMark: 1.00,
+    name: "IBPS SO 2026 Scale I IT Officer (Preliminary Exam)",
+    subName: "Prelims: Professional Knowledge & Computer Science (2026 Pattern)",
+    labId: "IBPS-SO-IT-2026-PRE-LAB-02",
+    durationMinutes: 80,
+    positiveMark: 1.25,
     negativeMark: 0.25,
     negativeText: "-0.25",
-    totalMarks: 100,
-    subject: "IT Officer Professional Knowledge 100 MCQs",
+    totalMarks: 125,
+    subject: "IT Officer Prelims Professional Knowledge 100 MCQs",
     categories: [
       "Database Management Systems & SQL",
       "Data Communication & Computer Networks",
@@ -1694,5 +1691,4 @@ const EXAMS_DATA = {
   }
 };
 
-// Legacy alias compatibility
 const QUESTIONS = SSC_CGL_QUESTIONS;
