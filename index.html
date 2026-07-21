@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SSC CGL 2026 Official Current Affairs Mock Test (TCS iON Portal)</title>
-  <meta name="description" content="Official TCS iON Exam Interface for SSC CGL 2026 General Awareness & Current Affairs. Features 100 top MCQs, authentic 5-status palette, exam mode toggle, celebrations, and detailed analytics.">
+  <title>Government Examination Portal 2026 (TCS iON Mock Tests)</title>
+  <meta name="description" content="Official TCS iON Exam Portal for SSC CGL 2026 Current Affairs & IBPS SO IT Officer 2026 Professional Knowledge (100 MCQs each, 5-status palette, real exam simulation).">
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,8 +20,8 @@
   <div id="bad-celebration-overlay" class="bad-celebration-overlay hidden">
     <div class="bad-celebration-card">
       <h3 id="bad-celebration-title">INCORRECT RESPONSE</h3>
-      <p id="bad-celebration-text">Negative Marking Penalty Applied (-0.33 Marks)</p>
-      <div class="bad-celebration-badge">SSC CGL Tier 1/2 Scheme</div>
+      <p id="bad-celebration-text">Negative Marking Penalty Applied</p>
+      <div id="bad-celebration-badge" class="bad-celebration-badge">Official Penalty Scheme</div>
     </div>
   </div>
 
@@ -43,62 +43,100 @@
   <div class="app-container">
     
     <!-- ========================================== -->
-    <!-- 1. WELCOME VIEW (UNBOXED TYPOGRAPHIC)      -->
+    <!-- 1. WELCOME VIEW (MULTI-TEST SELECTOR HUB)   -->
     <!-- ========================================== -->
     <section id="welcome-view" class="view-panel active">
       <div class="welcome-container">
         <header class="welcome-header">
-          <span class="badge badge-primary">SSC CGL 2026 Examination Portal</span>
-          <h1>Staff Selection Commission (SSC CGL 2026)</h1>
-          <h2>General Awareness & Current Affairs Mock Test</h2>
-          <p class="subtitle">Official TCS iON assessment interface with 100 top-priority current affairs questions.</p>
+          <span class="badge badge-primary">TCS iON Examination Hub 2026</span>
+          <h1>Government Recruitment Mock Test Portal</h1>
+          <p class="subtitle">Select your target examination below to begin the official assessment.</p>
         </header>
 
-        <div class="grid-stats">
-          <div class="stat-unit">
-            <span class="stat-value">100</span>
-            <span class="stat-label">MCQs (100 Marks)</span>
-          </div>
+        <!-- Multi-Test Selector Grid -->
+        <div class="test-selector-grid">
           
-          <div class="stat-unit">
-            <span class="stat-value">120 Min</span>
-            <span class="stat-label">Duration</span>
+          <!-- Test 1: SSC CGL 2026 -->
+          <div id="test-card-ssc" class="test-card active" onclick="selectTestTrack('ssc')">
+            <div class="test-card-header">
+              <span class="badge badge-primary">Track 1</span>
+              <h3>SSC CGL 2026</h3>
+              <p class="test-card-subtitle">General Awareness & Top 100 Current Affairs MCQs</p>
+            </div>
+            <div class="test-card-meta">
+              <span>100 MCQs</span>
+              <span>120 Mins</span>
+              <span>+1.00 / -0.33</span>
+            </div>
+            <div class="test-card-select-status">
+              <span class="select-label">Selected Track</span>
+            </div>
           </div>
 
-          <div class="stat-unit">
-            <span class="stat-value">1/3 (-0.33)</span>
-            <span class="stat-label">SSC Negative Marking</span>
+          <!-- Test 2: IBPS SO IT Officer 2026 -->
+          <div id="test-card-ibps" class="test-card" onclick="selectTestTrack('ibps')">
+            <div class="test-card-header">
+              <span class="badge badge-success">Track 2 (29 Aug 2026 Exam)</span>
+              <h3>IBPS SO IT Officer 2026</h3>
+              <p class="test-card-subtitle">Scale I Professional Knowledge (Computer Science & IT)</p>
+            </div>
+            <div class="test-card-meta">
+              <span>100 MCQs</span>
+              <span>60 Mins</span>
+              <span>+1.00 / -0.25</span>
+            </div>
+            <div class="test-card-select-status">
+              <span class="select-label">Select Track</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Dynamic Selected Test Details -->
+        <div class="selected-test-details">
+          <h2 id="selected-exam-title">Staff Selection Commission (SSC CGL 2026)</h2>
+          <p id="selected-exam-sub" class="subtitle">Official TCS iON assessment interface with 100 top-priority current affairs questions.</p>
+
+          <div class="grid-stats">
+            <div class="stat-unit">
+              <span id="stat-val-mcqs" class="stat-value">100</span>
+              <span class="stat-label">MCQs (100 Marks)</span>
+            </div>
+            
+            <div class="stat-unit">
+              <span id="stat-val-duration" class="stat-value">120 Min</span>
+              <span class="stat-label">Duration</span>
+            </div>
+
+            <div class="stat-unit">
+              <span id="stat-val-penalty" class="stat-value">1/3 (-0.33)</span>
+              <span id="stat-label-penalty" class="stat-label">SSC Negative Marking</span>
+            </div>
+          </div>
+
+          <section class="syllabus-section">
+            <h3>Syllabus & Subject Domains</h3>
+            <div id="syllabus-grid" class="syllabus-grid">
+              <!-- Populated dynamically by JS -->
+            </div>
+          </section>
+
+          <section class="rules-section">
+            <h4>Official Examination Guidelines</h4>
+            <ul id="rules-list" class="rules-list">
+              <li>Each correct answer awards <strong>+1.00 mark</strong>. Each incorrect answer carries a negative marking penalty.</li>
+              <li>Click <strong>Save & Next</strong> to lock your answer and proceed to the next question.</li>
+              <li>Click <strong>Clear Response</strong> to remove your option selection.</li>
+              <li>Click <strong>Save & Mark for Review</strong> or <strong>Mark for Review & Next</strong> to flag questions for review.</li>
+              <li>Toggle between <strong>Instant Feedback Mode</strong> (with explanations & celebrations) and <strong>Real Exam Mode</strong> (pure examination simulation).</li>
+            </ul>
+          </section>
+
+          <div class="welcome-actions">
+            <button id="start-exam-btn" class="btn btn-primary btn-large">Enter Examination Portal</button>
           </div>
         </div>
 
-        <section class="syllabus-section">
-          <h3>Syllabus Coverage</h3>
-          <div class="syllabus-grid">
-            <div class="syllabus-item"><span class="bullet"></span> National Affairs & Schemes</div>
-            <div class="syllabus-item"><span class="bullet"></span> International Affairs & Summits</div>
-            <div class="syllabus-item"><span class="bullet"></span> Economy & Union Budget</div>
-            <div class="syllabus-item"><span class="bullet"></span> Defense & Military Exercises</div>
-            <div class="syllabus-item"><span class="bullet"></span> Science, Space & Technology</div>
-            <div class="syllabus-item"><span class="bullet"></span> Sports & Championships</div>
-            <div class="syllabus-item"><span class="bullet"></span> Awards & Honours</div>
-            <div class="syllabus-item"><span class="bullet"></span> Appointments & Indexes</div>
-          </div>
-        </section>
-
-        <section class="rules-section">
-          <h4>Official Examination Guidelines</h4>
-          <ul class="rules-list">
-            <li>Each correct answer awards <strong>+1.00 mark</strong>. Each incorrect answer carries a <strong>-0.33 marks</strong> penalty.</li>
-            <li>Click <strong>Save & Next</strong> to lock your answer and proceed to the next question.</li>
-            <li>Click <strong>Clear Response</strong> to remove your option selection.</li>
-            <li>Click <strong>Save & Mark for Review</strong> or <strong>Mark for Review & Next</strong> to flag questions for review.</li>
-            <li>Toggle between <strong>Instant Feedback Mode</strong> (with explanations & celebrations) and <strong>Real Exam Mode</strong> (pure examination simulation).</li>
-          </ul>
-        </section>
-
-        <div class="welcome-actions">
-          <button id="start-exam-btn" class="btn btn-primary btn-large">Enter Examination Portal</button>
-        </div>
       </div>
     </section>
 
@@ -110,22 +148,22 @@
       <header class="tcs-header">
         <div class="tcs-header-top">
           <div class="tcs-logo-area">
-            <span class="tcs-exam-title">SSC CGL 2026 - Combined Graduate Level Examination</span>
-            <span class="tcs-sub-title">Paper I: General Awareness & Current Affairs</span>
+            <span id="tcs-exam-title" class="tcs-exam-title">SSC CGL 2026 - Combined Graduate Level Examination</span>
+            <span id="tcs-sub-title" class="tcs-sub-title">Paper I: General Awareness & Current Affairs</span>
           </div>
           <div class="tcs-system-info">
-            <span class="tcs-sys-name">System Name: <strong>CGL-2026-LAB-01</strong></span>
+            <span class="tcs-sys-name">System Name: <strong id="tcs-sys-id">CGL-2026-LAB-01</strong></span>
             <div class="tcs-candidate-card">
               <div class="tcs-cand-details">
-                <span class="tcs-cand-name">Candidate: SSC Aspirant</span>
-                <span class="tcs-subject">Current Affairs 100 MCQs</span>
+                <span class="tcs-cand-name">Candidate: Aspirant</span>
+                <span id="tcs-cand-subject" class="tcs-subject">Current Affairs 100 MCQs</span>
               </div>
             </div>
           </div>
         </div>
         <div class="tcs-header-bottom">
           <div class="tcs-section-tabs">
-            <span class="tcs-tab active">General Awareness (Current Affairs)</span>
+            <span id="tcs-tab-label" class="tcs-tab active">General Awareness</span>
           </div>
           <div class="tcs-header-controls">
             <!-- Mode Toggle Switcher -->
@@ -157,8 +195,8 @@
               <span id="question-category-label" class="tcs-category-tag">National Affairs</span>
             </div>
             <div class="tcs-marking-info">
-              <span class="tcs-mark pos">+1.00</span>
-              <span class="tcs-mark neg">-0.33</span>
+              <span id="tcs-mark-pos" class="tcs-mark pos">+1.00</span>
+              <span id="tcs-mark-neg" class="tcs-mark neg">-0.33</span>
               <span class="tcs-lang">Language: English</span>
             </div>
           </div>
@@ -234,7 +272,7 @@
     </section>
 
     <!-- ========================================== -->
-    <!-- 3. SCORECARD / RESULT VIEW (UNBOXED)       -->
+    <!-- 3. SCORECARD / RESULT VIEW                 -->
     <!-- ========================================== -->
     <section id="scorecard-view" class="view-panel">
       <div class="scorecard-wrapper">
@@ -242,8 +280,8 @@
         <!-- Score Overview Header -->
         <header class="score-hero">
           <span class="badge badge-success">Examination Complete</span>
-          <h2>Official Performance Scorecard</h2>
-          <p class="subtitle">SSC CGL 2026 Top 100 Current Affairs Mock Test Analysis</p>
+          <h2 id="scorecard-exam-title">Official Performance Scorecard</h2>
+          <p id="scorecard-exam-sub" class="subtitle">Mock Test Analysis</p>
           
           <div class="score-display">
             <div class="score-circle">
@@ -251,7 +289,7 @@
               <span class="score-out-of">/ 100.00 Marks</span>
             </div>
           </div>
-          <p class="negative-marking-notice">Calculated with 1/3 (-0.33) negative marking penalty for incorrect responses.</p>
+          <p id="scorecard-penalty-text" class="negative-marking-notice">Calculated with negative marking penalty for incorrect responses.</p>
         </header>
 
         <!-- Quick Stats Grid -->
@@ -262,7 +300,7 @@
           </div>
           <div class="stat-unit">
             <span class="stat-number text-wrong" id="score-wrong-cnt">0</span>
-            <span class="stat-label">Incorrect (-0.33 Each)</span>
+            <span id="score-penalty-stat-label" class="stat-label">Incorrect</span>
           </div>
           <div class="stat-unit">
             <span class="stat-number text-skipped" id="score-skipped-cnt">0</span>
@@ -277,7 +315,7 @@
         <!-- Detailed Syllabus Breakdown -->
         <section class="analysis-section">
           <h3>Subject Domain Breakdown</h3>
-          <p class="section-desc">Accuracy analysis across all 8 SSC CGL Current Affairs domains.</p>
+          <p class="section-desc">Accuracy analysis across all 8 exam domains.</p>
           <div id="subject-analysis-grid" class="subject-analysis-grid">
             <!-- Dynamically populated by JS -->
           </div>
@@ -286,7 +324,7 @@
         <!-- Recommendation Panel -->
         <section id="recommendation-card" class="recommendation-panel">
           <div class="rec-content">
-            <h4>SSC CGL Performance Analysis</h4>
+            <h4>Performance & Domain Analysis</h4>
             <p id="recommendation-text">Analyzing your results...</p>
           </div>
         </section>
@@ -310,7 +348,7 @@
 
         <!-- Scorecard actions -->
         <div class="scorecard-actions">
-          <button id="restart-test-btn" class="btn btn-primary btn-large">Retake Examination</button>
+          <button id="restart-test-btn" class="btn btn-primary btn-large">Retake / Switch Examination</button>
         </div>
 
       </div>

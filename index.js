@@ -1,30 +1,25 @@
 // ========================================================
-// STATE MANAGEMENT & TCS iON EXAM ENGINE
+// MULTI-TEST STATE MANAGEMENT & TCS iON EXAM ENGINE
+// Supports: SSC CGL 2026 & IBPS SO IT Officer 2026
 // ========================================================
+
+let activeExamKey = "ssc"; // "ssc" or "ibps"
+let activeQuestions = [];
+let activeExamConfig = {};
+
 let currentQuestionIndex = 0;
 // userAnswers[i] = { selectedOptionIndex: null|number, status: 'unvisited'|'answered'|'not_answered'|'marked'|'ans_marked', isCorrect: null|boolean }
 let userAnswers = [];
 let timerInterval = null;
-let timeLeft = 120 * 60; // 120 minutes (7200s)
+let timeLeft = 120 * 60; // seconds
 let isExamSubmitted = false;
 let practiceMode = "instant"; // "instant" or "exam"
-
-const SUBJECT_CATEGORIES = [
-  "National Affairs & Government Schemes",
-  "International Affairs & Global Summits",
-  "Economy, Banking & Union Budget",
-  "Defense & Military Exercises",
-  "Science, Space & Technology",
-  "Sports & Championships",
-  "Awards, Honours & Recognitions",
-  "Appointments, Indexes & Important Days"
-];
 
 // Confetti Particle System (Restrained non-purple color palette)
 let canvas, ctx;
 let confettiActive = false;
 let confettiParticles = [];
-const confettiColors = ['#2563eb', '#059669', '#d97706', '#dc2626', '#0284c7'];
+const confettiColors = ['#2563eb', '#16a34a', '#ea580c', '#dc2626', '#0284c7'];
 
 // Web Audio API Sound Synthesizer
 let audioCtx = null;
@@ -43,7 +38,6 @@ function playVictorySound() {
   try {
     const ctx = getAudioContext();
     const now = ctx.currentTime;
-    // Play upbeat 4-note victory chime (C5, E5, G5, C6)
     const notes = [523.25, 659.25, 783.99, 1046.50];
     notes.forEach((freq, idx) => {
       const osc = ctx.createOscillator();
@@ -66,7 +60,6 @@ function playSadTromboneSound() {
   try {
     const ctx = getAudioContext();
     const now = ctx.currentTime;
-    // Play 4-step descending pitch drop (D4, C#4, C4, B3 slide drop)
     const pitches = [293.66, 277.18, 261.63, 220.00];
     pitches.forEach((freq, idx) => {
       const osc = ctx.createOscillator();
@@ -98,7 +91,7 @@ function playSadTromboneSound() {
 // INITIALIZATION
 // ========================================================
 document.addEventListener("DOMContentLoaded", () => {
-  resetAnswersState();
+  selectTestTrack("ssc");
 
   // Setup DOM Listeners
   document.getElementById("start-exam-btn").addEventListener("click", startExam);
@@ -128,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("filter-all").addEventListener("click", () => filterReviewList("all"));
   document.getElementById("filter-incorrect").addEventListener("click", () => filterReviewList("incorrect"));
   document.getElementById("filter-skipped").addEventListener("click", () => filterReviewList("skipped"));
-  document.getElementById("restart-test-btn").addEventListener("click", restartExam);
+  document.getElementById("restart-test-btn").addEventListener("click", returnToHome);
 
   // Modal Buttons
   document.getElementById("modal-cancel-btn").addEventListener("click", hideModal);
@@ -138,8 +131,58 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", resizeConfettiCanvas);
 });
 
+// ========================================================
+// MULTI-TEST SELECTION HUB LOGIC
+// ========================================================
+window.selectTestTrack = function(examKey) {
+  activeExamKey = examKey;
+  activeExamConfig = EXAMS_DATA[examKey];
+  activeQuestions = activeExamConfig.questions;
+
+  // Toggle active card state
+  document.querySelectorAll(".test-card").forEach(card => card.classList.remove("active"));
+  const activeCard = document.getElementById(`test-card-${examKey}`);
+  if (activeCard) activeCard.classList.add("active");
+
+  // Update card status labels
+  document.querySelectorAll(".test-card .select-label").forEach(el => el.textContent = "Select Track");
+  if (activeCard) {
+    const activeLabel = activeCard.querySelector(".select-label");
+    if (activeLabel) activeLabel.textContent = "Selected Track";
+  }
+
+  // Update selected test details block
+  document.getElementById("selected-exam-title").textContent = activeExamConfig.name;
+  document.getElementById("selected-exam-sub").textContent = activeExamConfig.subName;
+  document.getElementById("stat-val-mcqs").textContent = activeExamConfig.questions.length;
+  document.getElementById("stat-val-duration").textContent = `${activeExamConfig.durationMinutes} Min`;
+  document.getElementById("stat-val-penalty").textContent = `1/${Math.round(1/activeExamConfig.negativeMark)} (${activeExamConfig.negativeText})`;
+  document.getElementById("stat-label-penalty").textContent = `${examKey.toUpperCase()} Negative Marking`;
+
+  // Render syllabus grid
+  const syllabusGrid = document.getElementById("syllabus-grid");
+  syllabusGrid.innerHTML = "";
+  activeExamConfig.categories.forEach(cat => {
+    const div = document.createElement("div");
+    div.className = "syllabus-item";
+    div.innerHTML = `<span class="bullet"></span> ${cat}`;
+    syllabusGrid.appendChild(div);
+  });
+
+  // Render rules text
+  const rulesList = document.getElementById("rules-list");
+  rulesList.innerHTML = `
+    <li>Each correct answer awards <strong>+${activeExamConfig.positiveMark.toFixed(2)} mark</strong>. Each incorrect answer carries a <strong>${activeExamConfig.negativeText} marks</strong> penalty.</li>
+    <li>Total time allocated: <strong>${activeExamConfig.durationMinutes} minutes</strong> for 100 questions.</li>
+    <li>Click <strong>Save & Next</strong> to lock your answer and proceed to the next question.</li>
+    <li>Click <strong>Clear Response</strong> to remove your option selection.</li>
+    <li>Click <strong>Save & Mark for Review</strong> or <strong>Mark for Review & Next</strong> to flag questions for review.</li>
+    <li>Toggle between <strong>Instant Feedback Mode</strong> (with explanations & celebrations) and <strong>Real Exam Mode</strong> (pure examination simulation).</li>
+  `;
+};
+
 function resetAnswersState() {
-  userAnswers = Array.from({ length: QUESTIONS.length }, () => ({
+  userAnswers = Array.from({ length: activeQuestions.length }, () => ({
     selectedOptionIndex: null,
     status: 'unvisited',
     isCorrect: null
@@ -158,11 +201,17 @@ function switchView(viewId) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+function returnToHome() {
+  hideModal();
+  clearInterval(timerInterval);
+  switchView("welcome-view");
+}
+
 // ========================================================
 // TIMER ENGINE
 // ========================================================
 function startTimer() {
-  timeLeft = 120 * 60;
+  timeLeft = activeExamConfig.durationMinutes * 60;
   updateTimerDisplay();
   clearInterval(timerInterval);
   timerInterval = setInterval(() => {
@@ -192,7 +241,7 @@ function updateTimerDisplay() {
 }
 
 // ========================================================
-// TOAST & PENALTY ENGINE (TEXT LABELS ONLY)
+// TOAST & PENALTY ENGINE
 // ========================================================
 function showToast(message, type = "primary") {
   const container = document.getElementById("toast-container");
@@ -210,7 +259,13 @@ function showToast(message, type = "primary") {
 
 function triggerBadCelebration() {
   const overlay = document.getElementById("bad-celebration-overlay");
+  const text = document.getElementById("bad-celebration-text");
+  const badge = document.getElementById("bad-celebration-badge");
+
   if (!overlay) return;
+
+  if (text) text.textContent = `Negative Marking Penalty Applied (${activeExamConfig.negativeText} Marks)`;
+  if (badge) badge.textContent = `${activeExamConfig.id.toUpperCase()} Exam Scheme`;
 
   playSadTromboneSound();
   overlay.classList.remove("hidden");
@@ -227,23 +282,28 @@ function startExam() {
   currentQuestionIndex = 0;
   isExamSubmitted = false;
   resetAnswersState();
+
+  // Update TCS iON Header
+  document.getElementById("tcs-exam-title").textContent = activeExamConfig.name;
+  document.getElementById("tcs-sub-title").textContent = activeExamConfig.subName;
+  document.getElementById("tcs-sys-id").textContent = activeExamConfig.labId;
+  document.getElementById("tcs-cand-subject").textContent = activeExamConfig.subject;
+  document.getElementById("tcs-tab-label").textContent = activeExamKey === 'ssc' ? "General Awareness" : "Professional Knowledge";
+  document.getElementById("tcs-mark-pos").textContent = `+${activeExamConfig.positiveMark.toFixed(2)}`;
+  document.getElementById("tcs-mark-neg").textContent = activeExamConfig.negativeText;
+
   buildNavigatorGrid();
   loadQuestion(0);
   startTimer();
   switchView("quiz-view");
-  showToast("Examination started.", "primary");
-}
-
-function restartExam() {
-  hideModal();
-  startExam();
+  showToast(`${activeExamConfig.name} started.`, "primary");
 }
 
 function buildNavigatorGrid() {
   const container = document.getElementById("question-navigator-grid");
   container.innerHTML = "";
   
-  for (let i = 0; i < QUESTIONS.length; i++) {
+  for (let i = 0; i < activeQuestions.length; i++) {
     const btn = document.createElement("button");
     btn.className = "nav-btn status-unvisited";
     btn.id = `nav-btn-${i}`;
@@ -261,7 +321,7 @@ function buildNavigatorGrid() {
 
 function loadQuestion(index) {
   currentQuestionIndex = index;
-  const question = QUESTIONS[index];
+  const question = activeQuestions[index];
   const state = userAnswers[index];
 
   if (state.status === 'unvisited') {
@@ -323,11 +383,11 @@ function loadQuestion(index) {
     
     if (state.isCorrect) {
       feedbackBox.className = "feedback-box correct-feedback";
-      feedbackTitle.textContent = "Correct Answer (+1.00 Mark)";
+      feedbackTitle.textContent = `Correct Answer (+${activeExamConfig.positiveMark.toFixed(2)} Mark)`;
       feedbackText.textContent = `Selected Option ${alphabet[state.selectedOptionIndex]}.`;
     } else {
       feedbackBox.className = "feedback-box wrong-feedback";
-      feedbackTitle.textContent = "Incorrect Answer (-0.33 Marks Penalty)";
+      feedbackTitle.textContent = `Incorrect Answer (${activeExamConfig.negativeText} Penalty)`;
       feedbackText.textContent = `Selected Option ${alphabet[state.selectedOptionIndex]}. Correct answer is Option ${alphabet[question.correctIndex]}.`;
     }
   } else {
@@ -336,14 +396,14 @@ function loadQuestion(index) {
 
   document.getElementById("prev-btn").disabled = (index === 0);
   const nextBtn = document.getElementById("next-btn");
-  nextBtn.textContent = index === QUESTIONS.length - 1 ? "Save & Submit" : "Save & Next";
+  nextBtn.textContent = index === activeQuestions.length - 1 ? "Save & Submit" : "Save & Next";
 
   updatePaletteButtonUI(index);
   updatePaletteSummaryCounts();
 }
 
 function handleOptionClick(optIdx) {
-  const question = QUESTIONS[currentQuestionIndex];
+  const question = activeQuestions[currentQuestionIndex];
   const state = userAnswers[currentQuestionIndex];
 
   state.selectedOptionIndex = optIdx;
@@ -365,10 +425,10 @@ function handleOptionClick(optIdx) {
     if (state.isCorrect) {
       triggerConfetti();
       playVictorySound();
-      showToast("Correct Answer (+1.00 Mark)", "success");
+      showToast(`Correct Answer (+${activeExamConfig.positiveMark.toFixed(2)} Mark)`, "success");
     } else {
       triggerBadCelebration();
-      showToast("Incorrect Answer (-0.33 Marks Penalty)", "error");
+      showToast(`Incorrect Answer (${activeExamConfig.negativeText} Penalty)`, "error");
     }
   }
 }
@@ -388,7 +448,7 @@ function saveAndNext() {
   updatePaletteButtonUI(currentQuestionIndex);
   updatePaletteSummaryCounts();
 
-  if (currentQuestionIndex < QUESTIONS.length - 1) {
+  if (currentQuestionIndex < activeQuestions.length - 1) {
     loadQuestion(currentQuestionIndex + 1);
   } else {
     triggerSubmitConfirmation();
@@ -417,7 +477,7 @@ function markForReviewAndNext() {
   updatePaletteButtonUI(currentQuestionIndex);
   updatePaletteSummaryCounts();
 
-  if (currentQuestionIndex < QUESTIONS.length - 1) {
+  if (currentQuestionIndex < activeQuestions.length - 1) {
     loadQuestion(currentQuestionIndex + 1);
   } else {
     triggerSubmitConfirmation();
@@ -431,7 +491,7 @@ function saveAndMarkForReview() {
   updatePaletteButtonUI(currentQuestionIndex);
   updatePaletteSummaryCounts();
 
-  if (currentQuestionIndex < QUESTIONS.length - 1) {
+  if (currentQuestionIndex < activeQuestions.length - 1) {
     loadQuestion(currentQuestionIndex + 1);
   } else {
     triggerSubmitConfirmation();
@@ -494,7 +554,7 @@ function triggerSubmitConfirmation() {
   const modal = document.getElementById("confirm-modal");
   const modalMsg = document.getElementById("modal-message");
 
-  let msgHtml = `You have answered <strong>${answered}</strong> out of 100 questions.<br>`;
+  let msgHtml = `You have answered <strong>${answered}</strong> out of ${activeQuestions.length} questions.<br>`;
   if (marked > 0) msgHtml += `<strong>${marked}</strong> questions marked for review.<br>`;
   if (unvisited > 0) msgHtml += `<strong>${unvisited}</strong> questions remain unvisited.<br>`;
   msgHtml += `<br>Are you sure you want to final submit?`;
@@ -526,16 +586,20 @@ function submitExam() {
     }
   });
 
-  const rawScore = correctCount * 1.0;
-  const negativePenalty = wrongCount * 0.333333;
+  const rawScore = correctCount * activeExamConfig.positiveMark;
+  const negativePenalty = wrongCount * activeExamConfig.negativeMark;
   const finalScore = Math.max(0, rawScore - negativePenalty);
   const accuracy = correctCount + wrongCount > 0 ? Math.round((correctCount / (correctCount + wrongCount)) * 100) : 0;
 
+  document.getElementById("scorecard-exam-title").textContent = activeExamConfig.name;
+  document.getElementById("scorecard-exam-sub").textContent = activeExamConfig.subName;
   document.getElementById("final-score").textContent = finalScore.toFixed(2);
   document.getElementById("score-correct-cnt").textContent = correctCount;
   document.getElementById("score-wrong-cnt").textContent = wrongCount;
+  document.getElementById("score-penalty-stat-label").textContent = `Incorrect (${activeExamConfig.negativeText} Each)`;
   document.getElementById("score-skipped-cnt").textContent = skippedCount;
   document.getElementById("score-accuracy").textContent = `${accuracy}%`;
+  document.getElementById("scorecard-penalty-text").textContent = `Calculated with 1/${Math.round(1/activeExamConfig.negativeMark)} (${activeExamConfig.negativeText}) negative marking penalty.`;
 
   renderSubjectAnalysis();
   generateRecommendations(correctCount, wrongCount, finalScore);
@@ -550,26 +614,28 @@ function renderSubjectAnalysis() {
   container.innerHTML = "";
 
   const categoriesStats = {};
-  SUBJECT_CATEGORIES.forEach(cat => {
+  activeExamConfig.categories.forEach(cat => {
     categoriesStats[cat] = { total: 0, correct: 0, wrong: 0, skipped: 0 };
   });
 
-  QUESTIONS.forEach((q, index) => {
+  activeQuestions.forEach((q, index) => {
     const cat = q.category;
     const ans = userAnswers[index];
-    categoriesStats[cat].total++;
+    if (categoriesStats[cat]) {
+      categoriesStats[cat].total++;
 
-    if (ans.selectedOptionIndex === null) {
-      categoriesStats[cat].skipped++;
-    } else if (ans.isCorrect) {
-      categoriesStats[cat].correct++;
-    } else {
-      categoriesStats[cat].wrong++;
+      if (ans.selectedOptionIndex === null) {
+        categoriesStats[cat].skipped++;
+      } else if (ans.isCorrect) {
+        categoriesStats[cat].correct++;
+      } else {
+        categoriesStats[cat].wrong++;
+      }
     }
   });
 
-  SUBJECT_CATEGORIES.forEach(cat => {
-    const stats = categoriesStats[cat];
+  activeExamConfig.categories.forEach(cat => {
+    const stats = categoriesStats[cat] || { total: 0, correct: 0, wrong: 0, skipped: 0 };
     const percentage = stats.total > 0 ? Math.round((stats.correct / stats.total) * 100) : 0;
 
     let badgeClass = "badge-danger";
@@ -608,24 +674,29 @@ function renderSubjectAnalysis() {
 
 function generateRecommendations(correctCount, wrongCount, finalScore) {
   const categoriesStats = {};
-  SUBJECT_CATEGORIES.forEach(cat => { categoriesStats[cat] = { total: 0, correct: 0 }; });
-  QUESTIONS.forEach((q, index) => {
-    categoriesStats[q.category].total++;
-    if (userAnswers[index].isCorrect) categoriesStats[q.category].correct++;
+  activeExamConfig.categories.forEach(cat => { categoriesStats[cat] = { total: 0, correct: 0 }; });
+  activeQuestions.forEach((q, index) => {
+    if (categoriesStats[q.category]) {
+      categoriesStats[q.category].total++;
+      if (userAnswers[index].isCorrect) categoriesStats[q.category].correct++;
+    }
   });
 
   const weakTopics = [];
   const strongTopics = [];
 
-  SUBJECT_CATEGORIES.forEach(cat => {
-    const pct = (categoriesStats[cat].correct / categoriesStats[cat].total) * 100;
-    if (pct < 50) weakTopics.push({ name: cat, score: pct });
-    else if (pct >= 75) strongTopics.push({ name: cat, score: pct });
+  activeExamConfig.categories.forEach(cat => {
+    const stats = categoriesStats[cat];
+    if (stats && stats.total > 0) {
+      const pct = (stats.correct / stats.total) * 100;
+      if (pct < 50) weakTopics.push({ name: cat, score: pct });
+      else if (pct >= 75) strongTopics.push({ name: cat, score: pct });
+    }
   });
 
   let recText = "";
   if (finalScore >= 70) {
-    recText = `Score of **${finalScore.toFixed(2)}/100**. Strong performance across General Awareness domains. `;
+    recText = `Score of **${finalScore.toFixed(2)}/100**. Excellent command over ${activeExamConfig.name} domains. `;
     if (weakTopics.length > 0) recText += `Focus revision on: **${weakTopics.map(w => w.name).join(", ")}**. `;
   } else if (finalScore >= 40) {
     recText = `Score of **${finalScore.toFixed(2)}/100**. `;
@@ -653,7 +724,7 @@ function renderReviewList() {
   let displayedCount = 0;
   const alphabet = ["A", "B", "C", "D"];
 
-  QUESTIONS.forEach((q, index) => {
+  activeQuestions.forEach((q, index) => {
     const ans = userAnswers[index];
     let shouldDisplay = false;
 
@@ -669,7 +740,7 @@ function renderReviewList() {
     const isSkipped = (ans.selectedOptionIndex === null);
     const statusText = isSkipped 
       ? `<span class="badge badge-secondary">Skipped</span>`
-      : `<span class="badge badge-danger">Incorrect (-0.33)</span>`;
+      : `<span class="badge badge-danger">Incorrect (${activeExamConfig.negativeText})</span>`;
 
     item.innerHTML = `
       <div class="review-item-header" onclick="toggleReviewItem(this)">
