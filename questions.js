@@ -5,820 +5,805 @@
 // ========================================================
 
 const SSC_CGL_QUESTIONS = [
-  // CATEGORY 1: National Affairs, Defence & Operation Sindoor (1-18)
   {
     id: 1,
-    category: "National Affairs & Defence",
-    question: "What was the code name of India's military operation launched on May 7, 2025, in response to the Pahalgam terror attack?",
-    options: ["Operation Sindoor", "Operation Vijay", "Operation Parakram", "Operation Trident"],
-    correctIndex: 0,
-    explanation: "Operation Sindoor was launched by India on May 7, 2025, involving precision missile and air strikes targeting terrorist infrastructure of Jaish-e-Mohammed and Lashkar-e-Taiba in Pakistan-administered Kashmir, in response to the April 22, 2025 Pahalgam attack that killed 26 civilians."
+    category: "Budget & Economy",
+    question: "The Union Budget 2026–27 was presented on:",
+    options: ["26 January 2026","31 January 2026","1 February 2026","15 February 2026"],
+    correctIndex: 2,
+    explanation: "The correct answer is Option C: 1 February 2026."
   },
   {
     id: 2,
-    category: "National Affairs & Defence",
-    question: "On which date did the Pahalgam terror attack take place in Baisaran Valley, Jammu & Kashmir, killing 26 civilians?",
-    options: ["April 22, 2025", "March 15, 2025", "May 7, 2025", "April 10, 2025"],
-    correctIndex: 0,
-    explanation: "On April 22, 2025, three armed terrorists attacked tourists in Baisaran Valley near Pahalgam, J&K, killing 26 civilians. This attack was attributed to The Resistance Front (TRF), a front for Pakistan-based Lashkar-e-Taiba (LeT)."
+    category: "Budget & Economy",
+    question: "Who presented the Union Budget 2026–27?",
+    options: ["Amit Shah","Nirmala Sitharaman","Rajnath Singh","Piyush Goyal"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: Nirmala Sitharaman."
   },
   {
     id: 3,
-    category: "National Affairs & Defence",
-    question: "After Operation Sindoor, the India-Pakistan ceasefire was agreed upon on which date in 2025?",
-    options: ["May 10, 2025", "May 15, 2025", "May 7, 2025", "May 20, 2025"],
-    correctIndex: 0,
-    explanation: "The four-day military conflict between India and Pakistan (May 7–10, 2025) ended with a bilateral ceasefire agreement on May 10, 2025."
+    category: "Budget & Economy",
+    question: "The theme of the Union Budget 2026–27 was:",
+    options: ["Viksit Bharat","Digital India","Atmanirbhar Bharat","Yuva Shakti"],
+    correctIndex: 3,
+    explanation: "The correct answer is Option D: Yuva Shakti."
   },
   {
     id: 4,
-    category: "National Affairs & Defence",
-    question: "India placed which treaty in 'abeyance' in response to the Pahalgam terror attack of April 2025?",
-    options: ["Indus Waters Treaty, 1960", "Shimla Agreement, 1972", "Tashkent Declaration, 1966", "Lahore Declaration, 1999"],
-    correctIndex: 0,
-    explanation: "In response to the Pahalgam terror attack, India placed the Indus Waters Treaty of 1960 in abeyance with immediate effect, citing Pakistan's continued support for cross-border terrorism."
+    category: "Budget & Economy",
+    question: "The fiscal deficit target for FY 2026–27 was:",
+    options: ["3.8% of GDP","4.0% of GDP","4.3% of GDP","4.8% of GDP"],
+    correctIndex: 2,
+    explanation: "The correct answer is Option C: 4.3% of GDP."
   },
   {
     id: 5,
-    category: "National Affairs & Defence",
-    question: "India commissioned its third indigenous nuclear-powered ballistic missile submarine (SSBN) on April 3, 2026. What is its name?",
-    options: ["INS Aridhaman (S4)", "INS Arihant (S2)", "INS Arighat (S3)", "INS Chakra"],
-    correctIndex: 0,
-    explanation: "INS Aridhaman (S4), India's third indigenous SSBN, was commissioned on April 3, 2026, with enhanced capabilities including larger missile capacity for K-4 and K-15 SLBMs, further strengthening India's sea-based nuclear triad."
+    category: "Budget & Economy",
+    question: "Under the Union Budget 2026–27, the full income-tax rebate was available up to an annual income of:",
+    options: ["₹10 lakh","₹11 lakh","₹12 lakh","₹12.75 lakh"],
+    correctIndex: 3,
+    explanation: "The correct answer is Option D: ₹12.75 lakh."
   },
   {
     id: 6,
-    category: "National Affairs & Defence",
-    question: "What is the name of the indigenous long-range surface-to-air missile (LR-SAM) that DRDO successfully test-fired on July 23, 2026?",
-    options: ["Kusha", "Akash-NG", "Barak-8", "Trishul"],
-    correctIndex: 0,
-    explanation: "DRDO's Kusha long-range SAM system was successfully maiden flight-tested on July 23, 2026. It is designed to intercept aerial threats at ranges up to 350–400 km, reducing dependency on imported systems like S-400."
+    category: "Budget & Economy",
+    question: "Public capital expenditure for FY 2026–27 was increased to:",
+    options: ["₹10 lakh crore","₹11.2 lakh crore","₹12.2 lakh crore","₹13 lakh crore"],
+    correctIndex: 2,
+    explanation: "The correct answer is Option C: ₹12.2 lakh crore."
   },
   {
     id: 7,
-    category: "National Affairs & Defence",
-    question: "Under which project did India clear the development of two indigenous nuclear-powered attack submarines (SSN) in 2025?",
-    options: ["Project 77", "Project 75I", "Project 75", "Project 28"],
-    correctIndex: 0,
-    explanation: "In 2025, India cleared the development of two indigenous nuclear-powered attack submarines (SSN) under Project 77, with L&T and the Shipbuilding Centre (Visakhapatnam) as key partners."
+    category: "Budget & Economy",
+    question: "India Semiconductor Mission (ISM) 2.0 was launched to strengthen:",
+    options: ["Defence exports","Textile manufacturing","Chip design and semiconductor supply chains","Agricultural production"],
+    correctIndex: 2,
+    explanation: "The correct answer is Option C: Chip design and semiconductor supply chains."
   },
   {
     id: 8,
-    category: "National Affairs & Defence",
-    question: "Which Act officially replaced MGNREGA and came into force on July 1, 2026, guaranteeing 125 days of rural employment?",
-    options: ["Viksit Bharat – Guarantee for Rozgar and Ajeevika Mission (Gramin) Act, 2025", "National Rural Employment Act, 2026", "Pradhan Mantri Gramin Rozgar Yojana Act, 2025", "Rural India Employment Guarantee Act, 2026"],
-    correctIndex: 0,
-    explanation: "The VB-G RAM G Act, 2025 replaced MGNREGA on July 1, 2026, increasing the employment guarantee from 100 to 125 days per household per year, with a 60-day mandatory pause during peak agricultural seasons."
+    category: "Budget & Economy",
+    question: "The Biopharma SHAKTI Scheme aims to:",
+    options: ["Improve crop production","Make India a global biopharma hub","Promote digital education","Strengthen banking infrastructure"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: Make India a global biopharma hub."
   },
   {
     id: 9,
-    category: "National Affairs & Defence",
-    question: "The four Labour Codes consolidating 29 existing labour laws came into effect in India on which date?",
-    options: ["November 21, 2025", "January 1, 2026", "April 1, 2025", "July 1, 2026"],
-    correctIndex: 0,
-    explanation: "The four Labour Codes — Code on Wages (2019), Industrial Relations Code (2020), Code on Social Security (2020), and Occupational Safety, Health and Working Conditions Code (2020) — were officially brought into force on November 21, 2025."
+    category: "Budget & Economy",
+    question: "The total outlay of the Biopharma SHAKTI Scheme is:",
+    options: ["₹5,000 crore","₹7,500 crore","₹10,000 crore","₹15,000 crore"],
+    correctIndex: 2,
+    explanation: "The correct answer is Option C: ₹10,000 crore."
   },
   {
     id: 10,
-    category: "National Affairs & Defence",
-    question: "The Waqf (Amendment) Act, 2025 renamed the original Waqf Act, 1995 as which Act?",
-    options: ["Unified Waqf Management, Empowerment, Efficiency and Development (UMEED) Act, 1995", "National Waqf Regulation Act, 1995", "Central Waqf Property Management Act, 1995", "Indian Waqf Board Reform Act, 1995"],
-    correctIndex: 0,
-    explanation: "The Waqf (Amendment) Act, 2025 renamed the Waqf Act, 1995 as the UMEED Act, mandating gender equality on Waqf Boards, increasing technology use, and promoting sectarian inclusivity. It received Presidential assent on April 5, 2025."
+    category: "Budget & Economy",
+    question: "The Biopharma SHAKTI Scheme has been announced for:",
+    options: ["3 years","4 years","5 years","7 years"],
+    correctIndex: 2,
+    explanation: "The correct answer is Option C: 5 years."
   },
   {
     id: 11,
-    category: "National Affairs & Defence",
-    question: "Which state became the first in post-independence India to implement the Uniform Civil Code (UCC)?",
-    options: ["Uttarakhand", "Gujarat", "Assam", "Himachal Pradesh"],
-    correctIndex: 0,
-    explanation: "Uttarakhand became the first state in post-independence India to pass and implement a Uniform Civil Code (UCC) covering marriage, divorce, inheritance, and live-in relationships."
+    category: "Budget & Economy",
+    question: "The recommendation to retain states' tax devolution at 41% was made by the:",
+    options: ["14th Finance Commission","15th Finance Commission","16th Finance Commission","17th Finance Commission"],
+    correctIndex: 2,
+    explanation: "The correct answer is Option C: 16th Finance Commission."
   },
   {
     id: 12,
-    category: "National Affairs & Defence",
-    question: "The new Income Tax Act, 2025 came into effect on which date, replacing the Income Tax Act, 1961?",
-    options: ["April 1, 2026", "January 1, 2026", "April 1, 2025", "July 1, 2025"],
-    correctIndex: 0,
-    explanation: "The new Income Tax Act, 2025 officially came into force on April 1, 2026, replacing the 63-year-old Income Tax Act, 1961. It introduces the concept of 'Tax Year' replacing 'Assessment Year' and 'Previous Year' terminology."
+    category: "Budget & Economy",
+    question: "Who is the Chairman of the 16th Finance Commission?",
+    options: ["N.K. Singh","Arvind Panagariya","Raghuram Rajan","Bimal Jalan"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: Arvind Panagariya."
   },
   {
     id: 13,
-    category: "National Affairs & Defence",
-    question: "The Constitution (129th Amendment) Bill, 2024 is related to which major electoral reform proposal?",
-    options: ["One Nation, One Election (ONOE)", "Lowering voting age to 16", "Direct election of Prime Minister", "Electronic voting for NRIs"],
-    correctIndex: 0,
-    explanation: "The Constitution (129th Amendment) Bill, 2024 seeks to institutionalize simultaneous elections for Lok Sabha, State Assemblies, and local bodies to reduce costs and frequent imposition of Model Code of Conduct, with a target year of 2034."
+    category: "Budget & Economy",
+    question: "The vertical share of tax devolution to states has been retained at:",
+    options: ["40%","41%","42%","43%"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: 41%."
   },
   {
     id: 14,
-    category: "National Affairs & Defence",
-    question: "India's first digital census (Census 2027) — Phase 1 (House Listing) commenced on which date?",
-    options: ["April 1, 2026", "January 1, 2026", "October 1, 2025", "February 1, 2027"],
-    correctIndex: 0,
-    explanation: "Census 2027 (India's 16th national census) Phase 1 began on April 1, 2026. It is India's first digital census using mobile applications and includes caste enumeration for the first time since 1931."
+    category: "Budget & Economy",
+    question: "India's estimated real GDP growth for 2025–26 is:",
+    options: ["6.8%","7.0%","7.2%","7.4%"],
+    correctIndex: 3,
+    explanation: "The correct answer is Option D: 7.4%."
   },
   {
     id: 15,
-    category: "National Affairs & Defence",
-    question: "Which exercise was India's major multinational naval exercise with Quad nations (India, USA, Japan, Australia) held in 2025?",
-    options: ["Malabar 2025", "RIMPAC 2025", "Tasman Saber 2025", "KAKADU 2025"],
-    correctIndex: 0,
-    explanation: "Malabar 2025, the Quad Naval Exercise between India, USA, Japan, and Australia, was held in Guam in 2025, focusing on multi-domain warfare, counter-terrorism, and maritime security."
+    category: "Budget & Economy",
+    question: "The projected nominal GDP growth for FY 2026–27 is:",
+    options: ["8%","9%","10%","11%"],
+    correctIndex: 2,
+    explanation: "The correct answer is Option C: 10%."
   },
   {
     id: 16,
-    category: "National Affairs & Defence",
-    question: "Which DRDO-developed next-generation ballistic missile was successfully tested in August 2025?",
-    options: ["Agni-Prime", "Agni-VI", "Prithvi-III", "Shaurya-II"],
-    correctIndex: 0,
-    explanation: "Agni-Prime, a next-generation ballistic missile with enhanced mobility and range, was successfully tested in August 2025, demonstrating India's advanced strategic missile capabilities."
+    category: "Budget & Economy",
+    question: "The new Income-tax Act, 2025 came into force on:",
+    options: ["26 January 2026","1 April 2026","1 July 2026","15 August 2026"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: 1 April 2026."
   },
   {
     id: 17,
-    category: "National Affairs & Defence",
-    question: "The Promotion and Regulation of Online Gaming Bill was passed in India in which year?",
-    options: ["2025", "2024", "2026", "2023"],
-    correctIndex: 0,
-    explanation: "The Promotion and Regulation of Online Gaming Bill, 2025 was passed to provide a comprehensive legal framework for regulating the online gaming industry in India."
+    category: "Republic Day 2026",
+    question: "India celebrated its ______ Republic Day on 26 January 2026.",
+    options: ["75th","76th","77th","78th"],
+    correctIndex: 2,
+    explanation: "The correct answer is Option C: 77th."
   },
   {
     id: 18,
-    category: "National Affairs & Defence",
-    question: "Which major bilateral exercise between India and Vietnam was held in 2025?",
-    options: ["VINBAX 2025", "Garuda Shakti 2025", "Hand-in-Hand 2025", "Nomadic Elephant 2025"],
-    correctIndex: 0,
-    explanation: "VINBAX 2025 (Vietnam-India Bilateral Army Exercise) was held in 2025, strengthening India-Vietnam defence cooperation in counter-terrorism and peacekeeping operations."
+    category: "Republic Day 2026",
+    question: "The theme of Republic Day 2026 was:",
+    options: ["Viksit Bharat","Ek Bharat Shreshtha Bharat","150 Years of Vande Mataram","Jai Hind"],
+    correctIndex: 2,
+    explanation: "The correct answer is Option C: 150 Years of Vande Mataram."
   },
-
-  // CATEGORY 2: Union Budget 2026-27 & Economy (19-32)
   {
     id: 19,
-    category: "Economy, Banking & Union Budget 2026-27",
-    question: "The Union Budget 2026-27 was presented on February 1, 2026. What fiscal deficit target was set for FY 2026-27?",
-    options: ["4.3% of GDP", "4.5% of GDP", "5.1% of GDP", "3.9% of GDP"],
-    correctIndex: 0,
-    explanation: "FM Nirmala Sitharaman set the fiscal deficit target at 4.3% of GDP for FY 2026-27, continuing fiscal consolidation from the 4.4% target of FY 2025-26."
+    category: "Republic Day 2026",
+    question: "Republic Day 2026 celebrations were held at:",
+    options: ["Red Fort","India Gate","Kartavya Path","Rashtrapati Bhavan"],
+    correctIndex: 2,
+    explanation: "The correct answer is Option C: Kartavya Path."
   },
   {
     id: 20,
-    category: "Economy, Banking & Union Budget 2026-27",
-    question: "What was the total estimated expenditure in the Union Budget 2026-27?",
-    options: ["₹53.5 Lakh Crore", "₹48.2 Lakh Crore", "₹45.0 Lakh Crore", "₹60.0 Lakh Crore"],
-    correctIndex: 0,
-    explanation: "The Union Budget 2026-27 estimated total expenditure at ₹53.5 lakh crore with non-debt receipts at ₹36.5 lakh crore."
+    category: "Republic Day 2026",
+    question: "Who presided over the Republic Day 2026 celebrations?",
+    options: ["Narendra Modi","Jagdeep Dhankhar","Droupadi Murmu","Rajnath Singh"],
+    correctIndex: 2,
+    explanation: "The correct answer is Option C: Droupadi Murmu."
   },
   {
     id: 21,
-    category: "Economy, Banking & Union Budget 2026-27",
-    question: "Which new scheme was introduced in the Union Budget 2026-27 to help women in Self-Help Groups (SHGs) scale their businesses?",
-    options: ["SHE-Marts", "Namo Drone Didi", "Lakhpati Didi", "Mahila Shakti Kendra"],
-    correctIndex: 0,
-    explanation: "SHE-Marts were introduced in Union Budget 2026-27 to enable women from Self-Help Groups (SHGs) to sell products directly to businesses (B2B model), scaling their enterprises."
+    category: "Republic Day 2026",
+    question: "For the first time in Republic Day history, the Chief Guests were:",
+    options: ["SAARC leaders","ASEAN leaders","European Union leaders","BRICS leaders"],
+    correctIndex: 2,
+    explanation: "The correct answer is Option C: European Union leaders."
   },
   {
     id: 22,
-    category: "Economy, Banking & Union Budget 2026-27",
-    question: "The Budget 2026-27 launched 'ISM 2.0' for which sector?",
-    options: ["Semiconductor Manufacturing", "Iron & Steel", "Solar Module Manufacturing", "Ship Building"],
-    correctIndex: 0,
-    explanation: "ISM 2.0 (India Semiconductor Mission 2.0) was launched in Budget 2026-27 to boost domestic semiconductor manufacturing under the 'Make in India' initiative."
+    category: "Republic Day 2026",
+    question: "António Costa is the:",
+    options: ["President of the European Commission","President of the European Council","President of the European Parliament","Secretary-General of NATO"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: President of the European Council."
   },
   {
     id: 23,
-    category: "Economy, Banking & Union Budget 2026-27",
-    question: "The Budget 2026-27 announced the development of how many new National Waterways?",
-    options: ["20", "10", "15", "30"],
-    correctIndex: 0,
-    explanation: "Union Budget 2026-27 announced 20 new National Waterways and City Economic Regions as part of infrastructure development, along with high-speed rail and multi-modal logistics."
+    category: "Republic Day 2026",
+    question: "Ursula von der Leyen is the:",
+    options: ["President of the European Council","President of the European Commission","President of the European Parliament","President of the European Central Bank"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: President of the European Commission."
   },
   {
     id: 24,
-    category: "Economy, Banking & Union Budget 2026-27",
-    question: "Who was appointed as the 26th Governor of the Reserve Bank of India, assuming office on December 11, 2024?",
-    options: ["Sanjay Malhotra", "Shaktikanta Das", "Urjit Patel", "Raghuram Rajan"],
-    correctIndex: 0,
-    explanation: "Sanjay Malhotra, formerly the Revenue Secretary in the Ministry of Finance, was appointed as the 26th RBI Governor on December 11, 2024, succeeding Shaktikanta Das."
+    category: "Republic Day 2026",
+    question: "Which of the following pairs is correctly matched?",
+    options: ["António Costa — European Commission","Ursula von der Leyen — European Commission","António Costa — NATO","Ursula von der Leyen — European Council"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: Ursula von der Leyen — European Commission."
   },
   {
     id: 25,
-    category: "Economy, Banking & Union Budget 2026-27",
-    question: "As per the Economic Survey 2025-26, what was India's real GDP growth rate for FY 2025-26?",
-    options: ["7.4%", "6.5%", "8.2%", "5.8%"],
+    category: "Budget & Economy",
+    question: "Which one of the following statements is correct?",
+    options: ["Fiscal deficit target for FY 2026–27 was fixed at 4.3% of GDP.","States' tax devolution was retained at 42%.","Public capital expenditure was ₹10 lakh crore.","Real GDP growth for 2025–26 was estimated at 6.5%."],
     correctIndex: 0,
-    explanation: "India's real GDP growth was estimated at 7.4% for FY 2025-26, driven by domestic consumption and public investment. The Economic Survey described India as an 'oasis of stability'."
+    explanation: "The correct answer is Option A: Fiscal deficit target for FY 2026–27 was fixed at 4.3% of GDP.."
   },
   {
     id: 26,
-    category: "Economy, Banking & Union Budget 2026-27",
-    question: "What is the current RBI repo rate as of mid-2026?",
-    options: ["5.25%", "6.50%", "6.00%", "4.50%"],
-    correctIndex: 0,
-    explanation: "The RBI MPC maintained the repo rate at 5.25% in its June 2026 meeting (unchanged for the third consecutive time) with a neutral monetary policy stance."
+    category: "Appointments",
+    question: "Who is the 53rd Chief Justice of India?",
+    options: ["Justice B.R. Gavai","Justice Surya Kant","Justice Sanjiv Khanna","Justice Dipankar Datta"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: Justice Surya Kant."
   },
   {
     id: 27,
-    category: "Economy, Banking & Union Budget 2026-27",
-    question: "The Budget 2026-27 introduced 'MSME Champion' initiative. What is its first step?",
-    options: ["Faster invoice payments via TReDS platform", "Direct subsidies to MSMEs", "GST exemption for micro-enterprises", "Free electricity for small units"],
-    correctIndex: 0,
-    explanation: "The 'MSME Champion' initiative is a three-step plan: (1) Faster invoice payments via TReDS, (2) Equity support, and (3) Low-cost professional compliance assistance for MSMEs."
+    category: "Appointments",
+    question: "Justice Surya Kant took oath as the Chief Justice of India on:",
+    options: ["26 January 2026","24 November 2025","1 February 2026","15 August 2025"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: 24 November 2025."
   },
   {
     id: 28,
-    category: "Economy, Banking & Union Budget 2026-27",
-    question: "Tax Collected at Source (TCS) rates for education remittances under LRS were reduced from 5% to what percentage in Budget 2026-27?",
-    options: ["2%", "1%", "3%", "0%"],
-    correctIndex: 0,
-    explanation: "TCS rates were reduced from 5% to 2% for remittances under the Liberalized Remittance Scheme (LRS) for education and medical purposes in Union Budget 2026-27."
+    category: "Appointments",
+    question: "Who is the current Governor of the Reserve Bank of India (RBI)?",
+    options: ["Shaktikanta Das","Sanjay Malhotra","Arvind Panagariya","Ajay Seth"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: Sanjay Malhotra."
   },
   {
     id: 29,
-    category: "Economy, Banking & Union Budget 2026-27",
-    question: "Budget 2026-27 proposed tax holidays until 2047 for foreign companies providing which service via Indian data centers?",
-    options: ["Global cloud computing services", "AI model training", "International banking", "Cybersecurity operations"],
-    correctIndex: 0,
-    explanation: "Union Budget 2026-27 introduced tax holidays until 2047 for foreign companies providing global cloud services through Indian data centers, alongside extended tax holidays for IFSC units (up to 20 years)."
+    category: "Appointments",
+    question: "Economist Neelkanth Mishra was appointed as India's Executive Director at the:",
+    options: ["IMF","Asian Development Bank","World Bank","WTO"],
+    correctIndex: 2,
+    explanation: "The correct answer is Option C: World Bank."
   },
   {
     id: 30,
-    category: "Economy, Banking & Union Budget 2026-27",
-    question: "The Budget 2026-27 proposed setting up 'NIMHANS-2' for which sector?",
-    options: ["Mental healthcare", "Cancer research", "Artificial Intelligence", "Renewable energy"],
-    correctIndex: 0,
-    explanation: "Budget 2026-27 proposed establishing NIMHANS-2 and upgrading national mental health institutes in Ranchi and Tezpur to strengthen India's mental healthcare infrastructure."
+    category: "Appointments",
+    question: "Neelkanth Mishra was appointed to the World Bank in:",
+    options: ["January 2026","March 2026","June 2026","December 2025"],
+    correctIndex: 2,
+    explanation: "The correct answer is Option C: June 2026."
   },
   {
     id: 31,
-    category: "Economy, Banking & Union Budget 2026-27",
-    question: "What was the projected nominal GDP growth for FY 2026-27 as per the Union Budget?",
-    options: ["10%", "8%", "12%", "7%"],
+    category: "Appointments",
+    question: "Who was appointed Chairman of Prasar Bharati in May 2026?",
+    options: ["Prasoon Joshi","Shekhar Kapur","Aamir Khan","Manoj Joshi"],
     correctIndex: 0,
-    explanation: "The Union Budget 2026-27 projected nominal GDP growth at 10% for FY 2026-27, with the government targeting central government debt decline to 55.6% of GDP."
+    explanation: "The correct answer is Option A: Prasoon Joshi."
   },
   {
     id: 32,
-    category: "Economy, Banking & Union Budget 2026-27",
-    question: "Union Budget 2026-27 was notable for being the first budget presented on which day of the week?",
-    options: ["Sunday", "Saturday", "Monday", "Holiday"],
-    correctIndex: 0,
-    explanation: "The Union Budget 2026-27 was notable for being the first budget in India's history to be presented on a Sunday, maintaining the government's fixed February 1 date schedule."
+    category: "Appointments",
+    question: "R.M. Nachammai became the first woman to head a functional:",
+    options: ["Space Centre","Nuclear Power Plant","Naval Command","Missile Testing Centre"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: Nuclear Power Plant."
   },
-
-  // CATEGORY 3: International Affairs & Global Summits (33-45)
   {
     id: 33,
-    category: "International Affairs & Global Summits",
-    question: "Which country holds the BRICS chairmanship for 2026?",
-    options: ["India", "Brazil", "South Africa", "China"],
-    correctIndex: 0,
-    explanation: "India assumed the BRICS chairmanship for 2026, following Brazil which hosted the 17th BRICS Summit in Rio de Janeiro in 2025."
+    category: "Appointments",
+    question: "R.M. Nachammai heads which nuclear power station?",
+    options: ["Kudankulam","Tarapur","Kaiga Generating Station","Kakrapar"],
+    correctIndex: 2,
+    explanation: "The correct answer is Option C: Kaiga Generating Station."
   },
   {
     id: 34,
-    category: "International Affairs & Global Summits",
-    question: "Which country is hosting the G20 Summit in 2026?",
-    options: ["United States", "South Africa", "India", "Brazil"],
-    correctIndex: 0,
-    explanation: "The United States is hosting the G20 Summit in 2026, following South Africa which held the G20 Presidency in 2025."
+    category: "Appointments",
+    question: "Senior Advocate V. Mohana became the ______ woman directly elevated from the Bar to the Supreme Court.",
+    options: ["First","Second","Third","Fourth"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: Second."
   },
   {
     id: 35,
-    category: "International Affairs & Global Summits",
-    question: "COP30 (30th UN Climate Change Conference) was held in November 2025 in which city?",
-    options: ["Belém, Brazil", "Dubai, UAE", "Baku, Azerbaijan", "Glasgow, UK"],
+    category: "Appointments",
+    question: "Before V. Mohana, the only woman directly elevated from the Bar to the Supreme Court was:",
+    options: ["Justice Indu Malhotra","Justice R. Banumathi","Justice Hima Kohli","Justice B.V. Nagarathna"],
     correctIndex: 0,
-    explanation: "COP30 was held in Belém, Brazil in November 2025, focusing on updated Nationally Determined Contributions (NDCs) and global climate finance."
+    explanation: "The correct answer is Option A: Justice Indu Malhotra."
   },
   {
     id: 36,
-    category: "International Affairs & Global Summits",
-    question: "Which country hosted the 51st G7 Summit in 2025?",
-    options: ["Canada", "France", "Italy", "Japan"],
-    correctIndex: 0,
-    explanation: "Canada hosted the G7 Summit in 2025. The G7 Presidency then passed to France, which hosted the 2026 G7 Summit in Évian-les-Bains."
+    category: "Awards & Honours",
+    question: "How many Padma Awards were announced in 2026?",
+    options: ["125","128","131","135"],
+    correctIndex: 2,
+    explanation: "The correct answer is Option C: 131."
   },
   {
     id: 37,
-    category: "International Affairs & Global Summits",
-    question: "China hosted the 25th SCO Summit in 2025 in which city?",
-    options: ["Tianjin", "Beijing", "Shanghai", "Chengdu"],
-    correctIndex: 0,
-    explanation: "China hosted the 25th SCO Summit in Tianjin in 2025. The SCO chairmanship then passed to the Kyrgyz Republic for the 2025-2026 period."
+    category: "Awards & Honours",
+    question: "How many Padma Vibhushan awards were announced in 2026?",
+    options: ["3","5","8","10"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: 5."
   },
   {
     id: 38,
-    category: "International Affairs & Global Summits",
-    question: "D. Gukesh became the 18th and youngest undisputed World Chess Champion in December 2024 by defeating whom?",
-    options: ["Ding Liren", "Magnus Carlsen", "Ian Nepomniachtchi", "R. Praggnanandhaa"],
-    correctIndex: 0,
-    explanation: "Dommaraju Gukesh defeated defending champion Ding Liren in the FIDE World Championship held in Singapore on December 12, 2024, becoming the youngest undisputed World Chess Champion at age 18."
+    category: "Awards & Honours",
+    question: "How many Padma Bhushan awards were announced in 2026?",
+    options: ["10","11","13","15"],
+    correctIndex: 2,
+    explanation: "The correct answer is Option C: 13."
   },
   {
     id: 39,
-    category: "International Affairs & Global Summits",
-    question: "Which country hosted the 46th FIDE Chess Olympiad scheduled for September 2026?",
-    options: ["Uzbekistan (Samarkand)", "India (Chennai)", "Hungary (Budapest)", "Russia (Moscow)"],
-    correctIndex: 0,
-    explanation: "The 46th FIDE Chess Olympiad is scheduled for September 16–27, 2026 in Samarkand, Uzbekistan. India is the defending champion in both Open and Women's sections."
+    category: "Awards & Honours",
+    question: "How many Padma Shri awards were announced in 2026?",
+    options: ["110","111","112","113"],
+    correctIndex: 3,
+    explanation: "The correct answer is Option D: 113."
   },
   {
     id: 40,
-    category: "International Affairs & Global Summits",
-    question: "The 2025 Nobel Prize in Physics was awarded to John M. Martinis, Michel H. Devoret, and John Clarke for discoveries related to which field?",
-    options: ["Macroscopic quantum mechanical tunnelling in electric circuits", "Gravitational wave detection", "Artificial neural networks", "Topological phase transitions"],
-    correctIndex: 0,
-    explanation: "The 2025 Nobel Prize in Physics was awarded to Martinis, Devoret, and Clarke for their discovery of macroscopic quantum mechanical tunnelling and energy quantisation in electric circuits."
+    category: "Awards & Honours",
+    question: "Which actor was posthumously awarded the Padma Vibhushan in 2026?",
+    options: ["Amitabh Bachchan","Dharmendra","Naseeruddin Shah","Kamal Haasan"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: Dharmendra."
   },
   {
     id: 41,
-    category: "International Affairs & Global Summits",
-    question: "The 2025 Nobel Prize in Chemistry was awarded for the development of which material?",
-    options: ["Metal–Organic Frameworks (MOFs)", "Graphene-based polymers", "CRISPR gene editing tools", "Quantum dot nanocrystals"],
-    correctIndex: 0,
-    explanation: "The 2025 Nobel Prize in Chemistry was awarded to Susumu Kitagawa, Richard Robson, and Omar M. Yaghi for the development of Metal–Organic Frameworks (MOFs)."
+    category: "Awards & Honours",
+    question: "Which former Kerala Chief Minister received the Padma Vibhushan posthumously?",
+    options: ["Oommen Chandy","V.S. Achuthanandan","A.K. Antony","E.K. Nayanar"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: V.S. Achuthanandan."
   },
   {
     id: 42,
-    category: "International Affairs & Global Summits",
-    question: "Who won the 2025 Nobel Peace Prize for promoting democratic rights in Venezuela?",
-    options: ["María Corina Machado", "Volodymyr Zelenskyy", "Alexei Navalny (posthumous)", "Greta Thunberg"],
-    correctIndex: 0,
-    explanation: "María Corina Machado won the 2025 Nobel Peace Prize for her tireless work promoting democratic rights for the people of Venezuela and her struggle for peaceful transition from dictatorship to democracy."
+    category: "Awards & Honours",
+    question: "Mammootty was honoured with which Padma Award in 2026?",
+    options: ["Padma Vibhushan","Padma Bhushan","Padma Shri","Bharat Ratna"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: Padma Bhushan."
   },
   {
     id: 43,
-    category: "International Affairs & Global Summits",
-    question: "The 2025 Nobel Prize in Literature was awarded to which author?",
-    options: ["László Krasznahorkai", "Haruki Murakami", "Salman Rushdie", "Margaret Atwood"],
-    correctIndex: 0,
-    explanation: "Hungarian novelist László Krasznahorkai won the 2025 Nobel Prize in Literature for his compelling and visionary oeuvre that reaffirms the power of art amidst apocalyptic terror."
+    category: "Awards & Honours",
+    question: "Mammootty received the Padma Bhushan in which field?",
+    options: ["Literature","Sports","Art","Science"],
+    correctIndex: 2,
+    explanation: "The correct answer is Option C: Art."
   },
   {
     id: 44,
-    category: "International Affairs & Global Summits",
-    question: "The 2025 Nobel Prize in Physiology or Medicine was awarded for discoveries concerning which biological process?",
-    options: ["Peripheral immune tolerance", "mRNA vaccine technology", "CRISPR gene therapy", "Cancer immunotherapy"],
-    correctIndex: 0,
-    explanation: "The 2025 Nobel Prize in Medicine was awarded to Mary E. Brunkow, Fred Ramsdell, and Shimon Sakaguchi for their discoveries concerning peripheral immune tolerance."
+    category: "Awards & Honours",
+    question: "Which former Indian tennis player received the Padma Bhushan in 2026?",
+    options: ["Leander Paes","Mahesh Bhupathi","Vijay Amritraj","Ramesh Krishnan"],
+    correctIndex: 2,
+    explanation: "The correct answer is Option C: Vijay Amritraj."
   },
   {
     id: 45,
-    category: "International Affairs & Global Summits",
-    question: "France hosted the 2026 G7 Summit in which city?",
-    options: ["Évian-les-Bains", "Paris", "Nice", "Lyon"],
-    correctIndex: 0,
-    explanation: "France held the G7 Presidency in 2026 and hosted the G7 Summit in Évian-les-Bains in June 2026."
+    category: "Awards & Honours",
+    question: "Which Indian cricketer received the Padma Shri in 2026?",
+    options: ["Virat Kohli","Rohit Sharma","Jasprit Bumrah","Ravindra Jadeja"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: Rohit Sharma."
   },
-
-  // CATEGORY 4: Science, Space & Technology (46-58)
   {
     id: 46,
-    category: "Science, Space & Technology",
-    question: "ISRO's SPADEX (Space Docking Experiment) was successfully launched on which date?",
-    options: ["December 30, 2024", "January 15, 2025", "March 5, 2025", "November 20, 2024"],
-    correctIndex: 0,
-    explanation: "SPADEX was launched on December 30, 2024 aboard a PSLV rocket. ISRO successfully demonstrated autonomous docking of two satellites (SDX-01 and SDX-02) in January 2025 and undocking in March 2025."
+    category: "Awards & Honours",
+    question: "Harmanpreet Kaur was honoured with which Padma Award?",
+    options: ["Padma Vibhushan","Padma Bhushan","Padma Shri","Bharat Ratna"],
+    correctIndex: 2,
+    explanation: "The correct answer is Option C: Padma Shri."
   },
   {
     id: 47,
-    category: "Science, Space & Technology",
-    question: "The joint ISRO-NASA Earth observation satellite NISAR was launched by which ISRO rocket in July 2025?",
-    options: ["GSLV-F16", "PSLV-C61", "LVM3-M5", "SSLV-D3"],
-    correctIndex: 0,
-    explanation: "NISAR (NASA-ISRO Synthetic Aperture Radar) was launched by GSLV-F16 on July 30, 2025, to measure global land surface changes, ice sheet movements, and ecosystem disturbances using dual-frequency SAR."
+    category: "Awards & Honours",
+    question: "Savita Punia is associated with which sport?",
+    options: ["Cricket","Football","Hockey","Athletics"],
+    correctIndex: 2,
+    explanation: "The correct answer is Option C: Hockey."
   },
   {
     id: 48,
-    category: "Science, Space & Technology",
-    question: "Who took over as the Chairman of ISRO and Secretary, Department of Space on January 14, 2025?",
-    options: ["Dr. V. Narayanan", "Dr. S. Somanath", "Dr. K. Sivan", "Dr. A.S. Kiran Kumar"],
-    correctIndex: 0,
-    explanation: "Dr. V. Narayanan succeeded Dr. S. Somanath as the Chairman of ISRO and Secretary of the Department of Space on January 14, 2025."
+    category: "Awards & Honours",
+    question: "Savita Punia received which Padma Award in 2026?",
+    options: ["Padma Vibhushan","Padma Bhushan","Padma Shri","Arjuna Award"],
+    correctIndex: 2,
+    explanation: "The correct answer is Option C: Padma Shri."
   },
   {
     id: 49,
-    category: "Science, Space & Technology",
-    question: "ISRO launched the navigation satellite NVS-02 on January 29, 2025 using which launch vehicle?",
-    options: ["GSLV-F15", "PSLV-C60", "LVM3-M4", "SSLV-D2"],
-    correctIndex: 0,
-    explanation: "GSLV-F15 launched the NVS-02 navigation satellite on January 29, 2025, enhancing India's NavIC (Navigation with Indian Constellation) regional navigation system."
+    category: "Awards & Honours",
+    question: "Which of the following received the Padma Bhushan in 2026?",
+    options: ["Rohit Sharma","Mammootty","Savita Punia","Harmanpreet Kaur"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: Mammootty."
   },
   {
     id: 50,
-    category: "Science, Space & Technology",
-    question: "ISRO's Gaganyaan crewed mission is now scheduled for which period?",
-    options: ["First quarter of 2027", "December 2025", "Mid-2026", "2028"],
-    correctIndex: 0,
-    explanation: "ISRO's maiden crewed Gaganyaan mission is now scheduled for the first quarter of 2027, following extensive safety testing including over 8,000 ground tests and multiple uncrewed demonstration flights."
+    category: "Awards & Honours",
+    question: "Which of the following pairs is correctly matched?",
+    options: ["Rohit Sharma — Padma Bhushan","Mammootty — Padma Shri","Vijay Amritraj — Padma Bhushan","Dharmendra — Padma Shri"],
+    correctIndex: 2,
+    explanation: "The correct answer is Option C: Vijay Amritraj — Padma Bhushan."
   },
   {
     id: 51,
-    category: "Science, Space & Technology",
-    question: "The United Nations declared 2025 as the International Year of which scientific field?",
-    options: ["Quantum Science and Technology", "Artificial Intelligence", "Biotechnology", "Renewable Energy"],
-    correctIndex: 0,
-    explanation: "The UN General Assembly declared 2025 as the International Year of Quantum Science and Technology, marking the 100th anniversary of quantum mechanics development."
+    category: "Sports",
+    question: "The 2026 Winter Olympics were held in:",
+    options: ["Paris, France","Milano-Cortina, Italy","Oslo, Norway","Geneva, Switzerland"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: Milano-Cortina, Italy."
   },
   {
     id: 52,
-    category: "Science, Space & Technology",
-    question: "The year 2025 was also declared by the UN as the International Year of what?",
-    options: ["Cooperatives", "Millets", "Water", "Forests"],
-    correctIndex: 0,
-    explanation: "2025 was declared the International Year of Cooperatives (IYC 2025) with the theme 'Cooperatives Build a Better World'. India hosted the ICA Global Cooperative Conference in New Delhi."
+    category: "Sports",
+    question: "The Winter Olympics 2026 were held from:",
+    options: ["1–15 February 2026","6–22 February 2026","10–26 February 2026","15–28 February 2026"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: 6–22 February 2026."
   },
   {
     id: 53,
-    category: "Science, Space & Technology",
-    question: "ISRO launched LVM3-M5/CMS-03 communication satellite mission in which month of 2025?",
-    options: ["November 2025", "July 2025", "March 2025", "September 2025"],
-    correctIndex: 0,
-    explanation: "ISRO launched the LVM3-M5/CMS-03 communication satellite mission on November 2, 2025, enhancing India's satellite communication capabilities."
+    category: "Sports",
+    question: "Which country topped the medal table at the Winter Olympics 2026?",
+    options: ["Germany","Norway","United States","Canada"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: Norway."
   },
   {
     id: 54,
-    category: "Science, Space & Technology",
-    question: "Which ISRO mission launched in January 2026 was an Earth observation satellite?",
-    options: ["PSLV-C62/EOS-N1", "GSLV-F17/NVS-03", "LVM3-M7/GSAT-25", "SSLV-D4/EOS-08"],
-    correctIndex: 0,
-    explanation: "PSLV-C62/EOS-N1 was launched on January 12, 2026, as an Earth observation mission to enhance India's remote sensing capabilities."
+    category: "Sports",
+    question: "Norway won how many gold medals at the Winter Olympics 2026?",
+    options: ["15","16","18","20"],
+    correctIndex: 2,
+    explanation: "The correct answer is Option C: 18."
   },
   {
     id: 55,
-    category: "Science, Space & Technology",
-    question: "The 2025 Nobel Prize in Economic Sciences was partly awarded to Joel Mokyr for identifying prerequisites for sustained growth through what?",
-    options: ["Technological progress", "International trade", "Monetary policy", "Population growth"],
+    category: "Sports",
+    question: "Which Indian athlete represented India in Alpine Skiing at the Winter Olympics 2026?",
+    options: ["Arif Khan","Stanzin Lundup","Neeraj Chopra","Dhanush Loganathan"],
     correctIndex: 0,
-    explanation: "The 2025 Economics Nobel was shared by Joel Mokyr (technological progress prerequisites for growth) and Philippe Aghion & Peter Howitt (theory of sustained growth through creative destruction)."
+    explanation: "The correct answer is Option A: Arif Khan."
   },
   {
     id: 56,
-    category: "Science, Space & Technology",
-    question: "The 2025 International Year of Glaciers' Preservation was dedicated to raising awareness about which environmental issue?",
-    options: ["Critical state of world's glaciers", "Ocean acidification", "Deforestation", "Air pollution"],
-    correctIndex: 0,
-    explanation: "2025 was declared the International Year of Glaciers' Preservation by the UN, dedicated to raising global awareness about the accelerating loss of glaciers due to climate change."
+    category: "Sports",
+    question: "Stanzin Lundup represented India in:",
+    options: ["Speed Skating","Ice Hockey","Cross-country Skiing","Snowboarding"],
+    correctIndex: 2,
+    explanation: "The correct answer is Option C: Cross-country Skiing."
   },
   {
     id: 57,
-    category: "Science, Space & Technology",
-    question: "ISRO launched LVM3-M6/BlueBird on December 24, 2025 as a commercial mission for which company?",
-    options: ["AST SpaceMobile", "SpaceX", "OneWeb", "Amazon Kuiper"],
-    correctIndex: 0,
-    explanation: "ISRO's LVM3-M6 launched AST SpaceMobile's BlueBird satellites on December 24, 2025, as a commercial launch demonstrating India's growing role in the global space launch market."
+    category: "Sports",
+    question: "Which country will host the 2030 Winter Olympics?",
+    options: ["Switzerland","France","Italy","Norway"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: France."
   },
   {
     id: 58,
-    category: "Science, Space & Technology",
-    question: "India's total UNESCO World Heritage Sites count reached how many after the inscription of Maratha Military Landscapes in July 2025?",
-    options: ["44", "42", "43", "45"],
-    correctIndex: 0,
-    explanation: "With the inscription of Maratha Military Landscapes of India (12 forts in Maharashtra and Tamil Nadu) in July 2025, India's total UNESCO World Heritage Sites reached 44 (36 cultural, 7 natural, 1 mixed)."
+    category: "Sports",
+    question: "The 2030 Winter Olympics will be held in the:",
+    options: ["Swiss Alps","Italian Alps","French Alps","Himalayan Region"],
+    correctIndex: 2,
+    explanation: "The correct answer is Option C: French Alps."
   },
-
-  // CATEGORY 5: Sports & Championships (59-72)
   {
     id: 59,
-    category: "Sports & Championships",
-    question: "India won the ICC Champions Trophy 2025 by defeating which team in the final?",
-    options: ["New Zealand", "Australia", "England", "South Africa"],
-    correctIndex: 0,
-    explanation: "India defeated New Zealand by four wickets in the ICC Champions Trophy 2025 final held in Dubai, winning their third Champions Trophy title. Rohit Sharma was named Player of the Match."
+    category: "Sports",
+    question: "Which team won the Ranji Trophy 2026?",
+    options: ["Mumbai","Vidarbha","Jammu & Kashmir","Karnataka"],
+    correctIndex: 2,
+    explanation: "The correct answer is Option C: Jammu & Kashmir."
   },
   {
     id: 60,
-    category: "Sports & Championships",
-    question: "Which team won the IPL 2025 title?",
-    options: ["Royal Challengers Bengaluru (RCB)", "Punjab Kings", "Mumbai Indians", "Gujarat Titans"],
-    correctIndex: 0,
-    explanation: "Royal Challengers Bengaluru (RCB) won the IPL 2025 title by defeating Punjab Kings in the final, marking their maiden IPL trophy."
+    category: "Sports",
+    question: "The Ranji Trophy 2026 title was the first for:",
+    options: ["Vidarbha","Jammu & Kashmir","Delhi","Railways"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: Jammu & Kashmir."
   },
   {
     id: 61,
-    category: "Sports & Championships",
-    question: "Which team won the IPL 2026 title?",
-    options: ["Royal Challengers Bengaluru (RCB)", "Gujarat Titans", "Chennai Super Kings", "Kolkata Knight Riders"],
-    correctIndex: 0,
-    explanation: "RCB achieved back-to-back IPL titles, winning IPL 2026 by defeating Gujarat Titans in the final."
+    category: "Sports",
+    question: "Which team won the Vijay Hazare Trophy 2026?",
+    options: ["Mumbai","Karnataka","Vidarbha","Tamil Nadu"],
+    correctIndex: 2,
+    explanation: "The correct answer is Option C: Vidarbha."
   },
   {
     id: 62,
-    category: "Sports & Championships",
-    question: "Who won the Wimbledon 2025 Men's Singles title?",
-    options: ["Jannik Sinner", "Carlos Alcaraz", "Novak Djokovic", "Daniil Medvedev"],
+    category: "Sports",
+    question: "Vidarbha won its ______ Vijay Hazare Trophy title in 2026.",
+    options: ["First","Second","Third","Fourth"],
     correctIndex: 0,
-    explanation: "Italian player Jannik Sinner won the 2025 Wimbledon Men's Singles title by defeating Carlos Alcaraz in the final."
+    explanation: "The correct answer is Option A: First."
   },
   {
     id: 63,
-    category: "Sports & Championships",
-    question: "Who won the Wimbledon 2025 Women's Singles title?",
-    options: ["Iga Świątek", "Coco Gauff", "Aryna Sabalenka", "Elena Rybakina"],
-    correctIndex: 0,
-    explanation: "Polish player Iga Świątek won the 2025 Wimbledon Women's Singles title, adding the grass-court Grand Slam to her Roland Garros titles."
+    category: "Sports",
+    question: "Which club won its first-ever Indian Super League (ISL) title in 2026?",
+    options: ["Mohun Bagan","Bengaluru FC","East Bengal","Kerala Blasters"],
+    correctIndex: 2,
+    explanation: "The correct answer is Option C: East Bengal."
   },
   {
     id: 64,
-    category: "Sports & Championships",
-    question: "Who won the French Open 2025 Men's Singles title?",
-    options: ["Carlos Alcaraz", "Jannik Sinner", "Rafael Nadal", "Alexander Zverev"],
-    correctIndex: 0,
-    explanation: "Spanish player Carlos Alcaraz won the French Open 2025 Men's Singles title by defeating Jannik Sinner in the final."
+    category: "Sports",
+    question: "Vaishali Rameshbabu won the:",
+    options: ["Women's Chess World Cup","Women's Candidates Tournament","Asian Chess Championship","Tata Steel Chess Tournament"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: Women's Candidates Tournament."
   },
   {
     id: 65,
-    category: "Sports & Championships",
-    question: "Who won the French Open 2025 Women's Singles title?",
-    options: ["Coco Gauff", "Iga Świątek", "Aryna Sabalenka", "Jasmine Paolini"],
-    correctIndex: 0,
-    explanation: "American player Coco Gauff won the French Open 2025 Women's Singles title by defeating Aryna Sabalenka in the final."
+    category: "Sports",
+    question: "Vaishali Rameshbabu became the ______ Indian woman to qualify for the Women's World Championship.",
+    options: ["First","Second","Third","Fourth"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: Second."
   },
   {
     id: 66,
-    category: "Sports & Championships",
-    question: "Which Indian athletes received the Major Dhyan Chand Khel Ratna Award in the 2024-2025 cycle?",
-    options: ["Gukesh D, Harmanpreet Singh, Praveen Kumar, Manu Bhaker", "Neeraj Chopra, PV Sindhu, Bajrang Punia, Lakshya Sen", "Virat Kohli, Rohit Sharma, Nikhat Zareen, Saina Nehwal", "Sunil Chhetri, Mary Kom, Manika Batra, Neeraj Chopra"],
-    correctIndex: 0,
-    explanation: "The Major Dhyan Chand Khel Ratna Award was conferred upon Gukesh D (Chess), Harmanpreet Singh (Hockey), Praveen Kumar (Para Athletics), and Manu Bhaker (Shooting) in the 2024-2025 cycle."
+    category: "Sports",
+    question: "Before Vaishali Rameshbabu, which Indian woman had qualified for the Women's World Championship?",
+    options: ["Dronavalli Harika","Koneru Humpy","Tania Sachdev","R. Vaishali"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: Koneru Humpy."
   },
   {
     id: 67,
-    category: "Sports & Championships",
-    question: "Which Indian cricketer received the Padma Shri award in 2026?",
-    options: ["Rohit Sharma", "Virat Kohli", "MS Dhoni", "Jasprit Bumrah"],
-    correctIndex: 0,
-    explanation: "Rohit Sharma was conferred the Padma Shri in 2026, along with other sports personalities like Harmanpreet Kaur (Padma Shri), Savita Punia (Padma Shri), and Vijay Amritraj (Padma Bhushan)."
+    category: "Sports",
+    question: "Which country defeated India 2–1 in the ODI series to register its first ODI series win on Indian soil?",
+    options: ["Australia","England","South Africa","New Zealand"],
+    correctIndex: 3,
+    explanation: "The correct answer is Option D: New Zealand."
   },
   {
     id: 68,
-    category: "Sports & Championships",
-    question: "Neeraj Chopra and Parul Chaudhary were recognized with which Indian Athletics Awards in 2026?",
-    options: ["Best Male Athlete and Best Female Athlete respectively", "Arjuna Award recipients", "Khel Ratna Award recipients", "Dronacharya Award recipients"],
-    correctIndex: 0,
-    explanation: "Olympic champion Neeraj Chopra (Best Male Athlete) and steeplechase star Parul Chaudhary (Best Female Athlete) were recognized at the Indian Athletics Awards 2026."
+    category: "Sports",
+    question: "India's women's cricket team won its first-ever:",
+    options: ["ICC Women's T20 World Cup","ICC Women's ODI World Cup","Asia Cup","Commonwealth Games Gold"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: ICC Women's ODI World Cup."
   },
   {
     id: 69,
-    category: "Sports & Championships",
-    question: "Which film won the Oscar for Best Picture at the 97th Academy Awards (2025)?",
-    options: ["Anora", "The Brutalist", "Emilia Pérez", "Conclave"],
-    correctIndex: 0,
-    explanation: "Anora won the Best Picture Oscar at the 97th Academy Awards (2025). Adrien Brody won Best Actor for The Brutalist and Mikey Madison won Best Actress for Anora."
+    category: "Sports",
+    question: "Who captained India to its first ICC Women's ODI World Cup title?",
+    options: ["Smriti Mandhana","Harmanpreet Kaur","Jemimah Rodrigues","Deepti Sharma"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: Harmanpreet Kaur."
   },
   {
     id: 70,
-    category: "Sports & Championships",
-    question: "Which artist's album 'Cowboy Carter' won Album of the Year at the 67th Grammy Awards (2025)?",
-    options: ["Beyoncé", "Taylor Swift", "Billie Eilish", "Sabrina Carpenter"],
-    correctIndex: 0,
-    explanation: "Beyoncé's 'Cowboy Carter' won Album of the Year at the 67th Grammy Awards (2025). Kendrick Lamar's 'Not Like Us' won Record of the Year and Song of the Year."
+    category: "Sports",
+    question: "India won the ICC Champions Trophy 2025 under the captaincy of:",
+    options: ["Virat Kohli","Jasprit Bumrah","Rohit Sharma","Hardik Pandya"],
+    correctIndex: 2,
+    explanation: "The correct answer is Option C: Rohit Sharma."
   },
   {
     id: 71,
-    category: "Sports & Championships",
-    question: "The Booker Prize 2025 was won by David Szalay for which novel?",
-    options: ["Flesh", "Orbital", "Intermezzo", "James"],
-    correctIndex: 0,
-    explanation: "David Szalay won the Booker Prize 2025 for his novel 'Flesh', succeeding Samantha Harvey who won the 2024 Booker Prize for 'Orbital'."
+    category: "Sports",
+    question: "India's men's hockey team won the Asia Cup under the captaincy of:",
+    options: ["Manpreet Singh","Harmanpreet Singh","P.R. Sreejesh","Vivek Sagar Prasad"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: Harmanpreet Singh."
   },
   {
     id: 72,
-    category: "Sports & Championships",
-    question: "The Abel Prize 2025 for Mathematics was awarded to which Japanese mathematician?",
-    options: ["Masaki Kashiwara", "Terence Tao", "Shinichi Mochizuki", "Shigeru Mukai"],
-    correctIndex: 0,
-    explanation: "Japanese mathematician Masaki Kashiwara was awarded the Abel Prize 2025 for fundamental contributions to algebraic analysis and representation theory."
+    category: "Science, Space & Defence",
+    question: "Gaganyaan-1 (G1), India's first uncrewed test flight, will carry:",
+    options: ["Chandrayaan Rover","Vyommitra","Pragyan","Aditya"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: Vyommitra."
   },
-
-  // CATEGORY 6: Awards, Honours & Appointments (73-85)
   {
     id: 73,
-    category: "Awards, Honours & Appointments",
-    question: "Who was appointed as the 53rd Chief Justice of India, assuming office on November 24, 2025?",
-    options: ["Justice Surya Kant", "Justice Sanjiv Khanna", "Justice B.R. Gavai", "Justice Vikram Nath"],
-    correctIndex: 0,
-    explanation: "Justice Surya Kant was appointed as the 53rd Chief Justice of India on November 24, 2025. He is scheduled to hold office until February 9, 2027."
+    category: "Science, Space & Defence",
+    question: "India's first crewed Gaganyaan mission (H1) is planned for:",
+    options: ["2026","2027","2028","2030"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: 2027."
   },
   {
     id: 74,
-    category: "Awards, Honours & Appointments",
-    question: "Who became the 52nd Chief Justice of India, taking oath on May 14, 2025?",
-    options: ["Justice Bhushan Ramkrishna Gavai (B.R. Gavai)", "Justice Sanjiv Khanna", "Justice Surya Kant", "Justice Hima Kohli"],
-    correctIndex: 0,
-    explanation: "Justice B.R. Gavai took oath as the 52nd Chief Justice of India on May 14, 2025, after the retirement of CJI Sanjiv Khanna."
+    category: "Science, Space & Defence",
+    question: "Who is the current Chairman of ISRO?",
+    options: ["S. Somanath","K. Sivan","V. Narayanan","A.S. Kiran Kumar"],
+    correctIndex: 2,
+    explanation: "The correct answer is Option C: V. Narayanan."
   },
   {
     id: 75,
-    category: "Awards, Honours & Appointments",
-    question: "Who was appointed as the 26th Chief Election Commissioner of India and took charge on February 19, 2025?",
-    options: ["Gyanesh Kumar", "Rajiv Kumar", "Sukhbir Singh Sandhu", "Anup Chandra Pandey"],
+    category: "Science, Space & Defence",
+    question: "DRDO successfully tested which of the following in June 2026?",
+    options: ["Phase-II Ballistic Missile Defence (BMD) System","BrahMos-II","Tejas Mk-2","Akash-NG Satellite"],
     correctIndex: 0,
-    explanation: "Gyanesh Kumar was appointed as the 26th CEC on February 19, 2025. He was the first CEC appointed under the Chief Election Commissioner and Other Election Commissioners Act, 2023."
+    explanation: "The correct answer is Option A: Phase-II Ballistic Missile Defence (BMD) System."
   },
   {
     id: 76,
-    category: "Awards, Honours & Appointments",
-    question: "How many Padma Awards were conferred in 2025?",
-    options: ["139", "106", "120", "150"],
-    correctIndex: 0,
-    explanation: "The Padma Awards 2025, announced on January 25, 2025, conferred 139 awards total: 7 Padma Vibhushan, 19 Padma Bhushan, and 113 Padma Shri. The list included 23 women and 13 posthumous awardees."
+    category: "Science, Space & Defence",
+    question: "Gaganyaan-1 (G1) is targeted for launch in:",
+    options: ["First half of 2026","Second half of 2026","First half of 2027","Second half of 2027"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: Second half of 2026."
   },
   {
     id: 77,
-    category: "Awards, Honours & Appointments",
-    question: "Which renowned Indian literary figure received Padma Vibhushan (posthumous) in 2025?",
-    options: ["M. T. Vasudevan Nair", "Gulzar", "Javed Akhtar", "Amitav Ghosh"],
-    correctIndex: 0,
-    explanation: "Eminent Malayalam writer M. T. Vasudevan Nair was posthumously conferred the Padma Vibhushan in 2025 for his contribution to Literature and Education."
+    category: "Science, Space & Defence",
+    question: "The Bharatiya Antariksha Station (Indian Space Station) is targeted to be established by:",
+    options: ["2030","2032","2035","2040"],
+    correctIndex: 2,
+    explanation: "The correct answer is Option C: 2035."
   },
   {
     id: 78,
-    category: "Awards, Honours & Appointments",
-    question: "The Pritzker Prize 2025 (Architecture) was awarded to which architect?",
-    options: ["Liu Jiakun (China)", "Bjarke Ingels (Denmark)", "David Chipperfield (UK)", "Riken Yamamoto (Japan)"],
-    correctIndex: 0,
-    explanation: "Chinese architect Liu Jiakun was awarded the Pritzker Prize 2025 for his thoughtful architecture that responds to local culture and context."
+    category: "Science, Space & Defence",
+    question: "DRDO successfully flight-tested which indigenous air-to-surface missile in 2026?",
+    options: ["BrahMos","Akash-NG","RudraM-II","Astra Mk-II"],
+    correctIndex: 2,
+    explanation: "The correct answer is Option C: RudraM-II."
   },
   {
     id: 79,
-    category: "Awards, Honours & Appointments",
-    question: "The Maratha Military Landscapes inscribed as India's 44th UNESCO World Heritage Site comprise how many forts?",
-    options: ["12 forts (11 in Maharashtra, 1 in Tamil Nadu)", "8 forts (all in Maharashtra)", "15 forts (12 in Maharashtra, 3 in Karnataka)", "10 forts (9 in Maharashtra, 1 in Goa)"],
-    correctIndex: 0,
-    explanation: "The Maratha Military Landscapes include 12 forts — 11 in Maharashtra (Salher, Shivneri, Lohgad, Khanderi, Raigad, Rajgad, Pratapgad, Suvarnadurg, Panhala, Vijaydurg, Sindhudurg) and 1 in Tamil Nadu (Gingee Fort)."
+    category: "Science, Space & Defence",
+    question: "NASM-MR stands for:",
+    options: ["Naval Air Strike Missile – Medium Range","Naval Anti-Ship Missile – Medium Range","National Air Security Missile – Medium Range","Naval Attack Surface Missile – Medium Range"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: Naval Anti-Ship Missile – Medium Range."
   },
   {
     id: 80,
-    category: "Awards, Honours & Appointments",
-    question: "India's Moidams of Charaideo (Ahom Dynasty mound-burial system) in Assam was inscribed as a UNESCO World Heritage Site in which year?",
-    options: ["2024 (43rd site)", "2025 (44th site)", "2023 (42nd site)", "2022 (41st site)"],
-    correctIndex: 0,
-    explanation: "The Moidams of Charaideo in Assam were inscribed as India's 43rd UNESCO World Heritage Site in July 2024 at the 46th WHC session in New Delhi — the first cultural site from Northeast India to receive this status."
+    category: "Science, Space & Defence",
+    question: "India successfully tested an Agni missile equipped with:",
+    options: ["Hypersonic Glide Vehicle","MIRV Capability","Nuclear Submarine System","Anti-Satellite Weapon"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: MIRV Capability."
   },
   {
     id: 81,
-    category: "Awards, Honours & Appointments",
-    question: "As per the Padma Awards 2025, which Japanese industrialist received Padma Vibhushan (posthumous)?",
-    options: ["Osamu Suzuki", "Akio Toyoda", "Masayoshi Son", "Kazuo Hirai"],
-    correctIndex: 0,
-    explanation: "Osamu Suzuki, former Chairman of Suzuki Motor Corporation, was posthumously awarded the Padma Vibhushan in 2025 for his exceptional contribution to Trade and Industry, particularly the Maruti-Suzuki partnership."
+    category: "Science, Space & Defence",
+    question: "MIRV stands for:",
+    options: ["Multiple Integrated Re-entry Vehicle","Multiple Independently Targetable Re-entry Vehicle","Multi-Interceptor Re-entry Vehicle","Missile Integrated Re-entry Version"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: Multiple Independently Targetable Re-entry Vehicle."
   },
   {
     id: 82,
-    category: "Awards, Honours & Appointments",
-    question: "Who received the Padma Vibhushan in 2025 in the field of Medicine?",
-    options: ["Dr. Duvvur Nageshwar Reddy", "Dr. Randeep Guleria", "Dr. Soumya Swaminathan", "Dr. Gagandeep Kang"],
-    correctIndex: 0,
-    explanation: "Dr. Duvvur Nageshwar Reddy, a renowned gastroenterologist, received the Padma Vibhushan in 2025 for his outstanding contributions to Medicine."
+    category: "Science, Space & Defence",
+    question: "Who is the current Defence Minister of India?",
+    options: ["Amit Shah","Rajnath Singh","Nitin Gadkari","J.P. Nadda"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: Rajnath Singh."
   },
   {
     id: 83,
-    category: "Awards, Honours & Appointments",
-    question: "Which Indian classical dance legend received Padma Vibhushan in 2025?",
-    options: ["Kumudini Rajnikant Lakhia", "Sonal Mansingh", "Birju Maharaj", "Alarmel Valli"],
-    correctIndex: 0,
-    explanation: "Kumudini Rajnikant Lakhia, a legendary Kathak dancer and choreographer, received the Padma Vibhushan in 2025 for her exceptional contribution to Art."
+    category: "Summits & Schemes",
+    question: "India hosted the India AI Impact Summit 2026 at:",
+    options: ["Vigyan Bhavan","Bharat Mandapam, New Delhi","Hyderabad International Convention Centre","India Habitat Centre"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: Bharat Mandapam, New Delhi."
   },
   {
     id: 84,
-    category: "Awards, Honours & Appointments",
-    question: "The legendary folk singer from Bihar who received Padma Vibhushan (posthumous) in 2025 was?",
-    options: ["Sharda Sinha", "Ila Arun", "Malini Awasthi", "Teejan Bai"],
-    correctIndex: 0,
-    explanation: "Sharda Sinha, the legendary folk singer known as 'Bihar Kokila', was posthumously conferred the Padma Vibhushan in 2025 for her extraordinary contribution to Art (folk music)."
+    category: "Summits & Schemes",
+    question: "The India AI Impact Summit 2026 was held from:",
+    options: ["10–15 February 2026","12–18 February 2026","16–21 February 2026","20–25 February 2026"],
+    correctIndex: 2,
+    explanation: "The correct answer is Option C: 16–21 February 2026."
   },
   {
     id: 85,
-    category: "Awards, Honours & Appointments",
-    question: "India's total registered GI (Geographical Indication) tags have surpassed which milestone as of 2026?",
-    options: ["650", "500", "400", "800"],
-    correctIndex: 0,
-    explanation: "India's GI tag registrations surpassed 650 by mid-2026, with the government targeting 10,000 GI tags by 2030 to promote regional heritage and boost rural income."
+    category: "Summits & Schemes",
+    question: "India became the first ______ nation to host an AI Summit.",
+    options: ["BRICS","Commonwealth","Global South","G20"],
+    correctIndex: 2,
+    explanation: "The correct answer is Option C: Global South."
   },
-
-  // CATEGORY 7: Static GK meets Current Affairs (86-93)
   {
     id: 86,
-    category: "Important Days & Years",
-    question: "National Space Day is celebrated in India on which date?",
-    options: ["August 23", "August 15", "October 22", "November 26"],
-    correctIndex: 0,
-    explanation: "August 23 was designated as National Space Day by PM Modi to commemorate ISRO's Chandrayaan-3 Vikram lander soft landing on the Moon on August 23, 2023."
+    category: "Summits & Schemes",
+    question: "Which of the following was NOT one of the three \"Sutras\" of the India AI Impact Summit 2026?",
+    options: ["People","Planet","Progress","Prosperity"],
+    correctIndex: 3,
+    explanation: "The correct answer is Option D: Prosperity."
   },
   {
     id: 87,
-    category: "Important Days & Years",
-    question: "Which day is observed as 'Parakram Diwas' on January 23?",
-    options: ["Birth anniversary of Netaji Subhash Chandra Bose", "Anniversary of Kargil Victory", "Indian Navy Day", "National Science Day"],
-    correctIndex: 0,
-    explanation: "January 23 is observed as 'Parakram Diwas' to mark the birth anniversary of Netaji Subhash Chandra Bose and honor his indomitable spirit and courage."
+    category: "Summits & Schemes",
+    question: "BharatGen Param2 is a:",
+    options: ["Quantum Computer","Large Language Model (AI Model)","Supercomputer","Satellite"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: Large Language Model (AI Model)."
   },
   {
     id: 88,
-    category: "Important Days & Years",
-    question: "The Government of India set a target to reach a debt-to-GDP ratio of 50±1% by which fiscal year?",
-    options: ["FY 2030-31", "FY 2027-28", "FY 2035-36", "FY 2025-26"],
-    correctIndex: 0,
-    explanation: "The Indian government's fiscal consolidation roadmap aims to reach a central government debt-to-GDP ratio of 50±1% by FY 2030-31."
+    category: "Summits & Schemes",
+    question: "BharatGen Param2 supports how many Indian languages?",
+    options: ["18","20","22","24"],
+    correctIndex: 2,
+    explanation: "The correct answer is Option C: 22."
   },
   {
     id: 89,
-    category: "Important Days & Years",
-    question: "India's target year for achieving Net-Zero carbon emissions under Panchamrit climate goals remains?",
-    options: ["2070", "2050", "2047", "2060"],
-    correctIndex: 0,
-    explanation: "India committed to achieving Net-Zero carbon emissions by 2070 at COP26 as part of the Panchamrit strategy. This target was reaffirmed in subsequent COP meetings."
+    category: "Summits & Schemes",
+    question: "BharatGen Param2 has approximately:",
+    options: ["7 Billion Parameters","10 Billion Parameters","17 Billion Parameters","70 Billion Parameters"],
+    correctIndex: 2,
+    explanation: "The correct answer is Option C: 17 Billion Parameters."
   },
   {
     id: 90,
-    category: "Important Days & Years",
-    question: "India's Viksit Bharat vision targets making India a developed nation by which year?",
-    options: ["2047", "2030", "2050", "2070"],
-    correctIndex: 0,
-    explanation: "The Viksit Bharat @2047 vision aims to transform India into a developed nation by 2047, coinciding with the 100th anniversary of India's independence."
+    category: "Summits & Schemes",
+    question: "The AI Summit 2027 will be hosted by:",
+    options: ["France","Switzerland","Germany","Japan"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: Switzerland."
   },
   {
     id: 91,
-    category: "Important Days & Years",
-    question: "The 'One Nation, One Election' proposal targets achieving fully simultaneous elections by which year?",
-    options: ["2034", "2029", "2030", "2047"],
-    correctIndex: 0,
-    explanation: "The One Nation, One Election (ONOE) proposal under the Constitution (129th Amendment) Bill has a long-term vision of achieving fully simultaneous elections by 2034."
+    category: "Summits & Schemes",
+    question: "The host city for the AI Summit 2027 is:",
+    options: ["Zurich","Geneva","Bern","Basel"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: Geneva."
   },
   {
     id: 92,
-    category: "Important Days & Years",
-    question: "India's Census 2027 will be the ____ national census and include caste enumeration for the first time since which year?",
-    options: ["16th census; since 1931", "15th census; since 1941", "17th census; since 1951", "16th census; since 1921"],
-    correctIndex: 0,
-    explanation: "Census 2027 is India's 16th national census (8th since independence). It will include caste enumeration for the first time since 1931 and will be conducted digitally."
+    category: "Summits & Schemes",
+    question: "India is hosting the first:",
+    options: ["Global Tiger Summit","International Big Cat Alliance (IBCA) Summit","World Wildlife Summit","Global Biodiversity Summit"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: International Big Cat Alliance (IBCA) Summit."
   },
   {
     id: 93,
-    category: "Important Days & Years",
-    question: "Which is the reference date for India's Census 2027 population enumeration?",
-    options: ["March 1, 2027", "January 1, 2027", "April 1, 2027", "February 1, 2027"],
-    correctIndex: 0,
-    explanation: "The official reference date for Census 2027 is March 1, 2027, except for snow-bound and Himalayan regions where it was set for October 1, 2026."
+    category: "Summits & Schemes",
+    question: "Bharat-VISTAAR is primarily designed for:",
+    options: ["School Education","Farmers","Defence Personnel","Banking Sector"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: Farmers."
   },
-
-  // CATEGORY 8: Miscellaneous Current Affairs (94-100)
   {
     id: 94,
-    category: "Miscellaneous Current Affairs",
-    question: "Under the VB-G RAM G Act, how many days of mandatory 'pause' during peak agricultural seasons is introduced?",
-    options: ["60 days", "30 days", "90 days", "45 days"],
-    correctIndex: 0,
-    explanation: "The VB-G RAM G Act (replacing MGNREGA) introduced a mandatory 60-day pause during peak agricultural sowing and harvesting seasons to ensure availability of farm labour."
+    category: "Summits & Schemes",
+    question: "Bharat-VISTAAR is a:",
+    options: ["Digital Payment Platform","Multilingual AI Advisory Tool","Drone Surveillance System","Crop Insurance Scheme"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: Multilingual AI Advisory Tool."
   },
   {
     id: 95,
-    category: "Miscellaneous Current Affairs",
-    question: "How many Indian natural sites were added to UNESCO's Tentative List in September 2025?",
-    options: ["7", "3", "5", "10"],
-    correctIndex: 0,
-    explanation: "Seven new natural sites were added to India's UNESCO Tentative List in September 2025: Deccan Traps (Maharashtra), St. Mary's Island (Karnataka), Meghalayan Age Caves, Naga Hill Ophiolite, Erra Matti Dibbalu, Tirumala Hills, and Varkala Cliff."
+    category: "Summits & Schemes",
+    question: "India's total installed power generation capacity crossed:",
+    options: ["450 GW","480 GW","500 GW","520 GW"],
+    correctIndex: 3,
+    explanation: "The correct answer is Option D: 520 GW."
   },
   {
     id: 96,
-    category: "Miscellaneous Current Affairs",
-    question: "Justice (Retd.) Jagdish Singh Khehar received which Padma award in 2025?",
-    options: ["Padma Vibhushan (Public Affairs)", "Padma Bhushan (Law)", "Padma Shri (Public Service)", "Bharat Ratna"],
-    correctIndex: 0,
-    explanation: "Justice (Retd.) Jagdish Singh Khehar (former CJI) received the Padma Vibhushan in 2025 for his distinguished contribution to Public Affairs."
+    category: "Summits & Schemes",
+    question: "India's installed solar power capacity reached approximately:",
+    options: ["100 GW","120 GW","140 GW","160 GW"],
+    correctIndex: 2,
+    explanation: "The correct answer is Option C: 140 GW."
   },
   {
     id: 97,
-    category: "Miscellaneous Current Affairs",
-    question: "India's retail inflation averaged what percentage during April–December 2025, as per the Economic Survey?",
-    options: ["1.7%", "4.5%", "3.2%", "5.1%"],
-    correctIndex: 0,
-    explanation: "India's retail inflation moderated significantly, averaging 1.7% during April–December 2025, supported by favorable food prices, well within the RBI's 4% (±2%) target range."
+    category: "Summits & Schemes",
+    question: "The logo and theme of the 4th India–Africa Forum Summit were launched by:",
+    options: ["Narendra Modi","Rajnath Singh","S. Jaishankar","Amit Shah"],
+    correctIndex: 2,
+    explanation: "The correct answer is Option C: S. Jaishankar."
   },
   {
     id: 98,
-    category: "Miscellaneous Current Affairs",
-    question: "India's current account deficit (CAD) in the first half of FY 2025-26 was recorded at what percentage of GDP?",
-    options: ["0.8%", "1.5%", "2.1%", "0.3%"],
-    correctIndex: 0,
-    explanation: "India's current account deficit was contained at 0.8% of GDP in H1 of FY 2025-26, reflecting improved external sector performance."
+    category: "Summits & Schemes",
+    question: "Which ministry is headed by S. Jaishankar?",
+    options: ["Ministry of Defence","Ministry of External Affairs","Ministry of Home Affairs","Ministry of Commerce"],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: Ministry of External Affairs."
   },
   {
     id: 99,
-    category: "Miscellaneous Current Affairs",
-    question: "The renowned violinist who received Padma Vibhushan in 2025 was?",
-    options: ["L. Subramaniam", "N. Rajam", "T.N. Krishnan", "Amjad Ali Khan"],
+    category: "Summits & Schemes",
+    question: "Which of the following pairs is correctly matched?",
+    options: ["BharatGen Param2 – 22 Indian Languages","Bharat-VISTAAR – Defence AI System","RudraM-II – Surface-to-Air Missile","NASM-MR – Ballistic Missile"],
     correctIndex: 0,
-    explanation: "Lakshminarayana Subramaniam (L. Subramaniam), the world-renowned violinist and composer, received the Padma Vibhushan in 2025 for his exceptional contribution to Art (Music)."
+    explanation: "The correct answer is Option A: BharatGen Param2 – 22 Indian Languages."
   },
   {
     id: 100,
-    category: "Miscellaneous Current Affairs",
-    question: "India's fiscal deficit for FY 2025-26 was targeted at what percentage of GDP?",
-    options: ["4.4% of GDP", "4.5% of GDP", "5.1% of GDP", "4.0% of GDP"],
-    correctIndex: 0,
-    explanation: "India's fiscal deficit for FY 2025-26 was targeted at 4.4% of GDP, successfully adhered to as part of the fiscal consolidation path, which was further reduced to 4.3% in the FY 2026-27 budget."
+    category: "Summits & Schemes",
+    question: "Which one of the following statements is correct?",
+    options: ["AI Summit 2027 will be held in Paris.","BharatGen Param2 is a 17-billion-parameter AI model.","Bharat-VISTAAR is a healthcare AI platform.","India's installed power capacity remained below 500 GW."],
+    correctIndex: 1,
+    explanation: "The correct answer is Option B: BharatGen Param2 is a 17-billion-parameter AI model.."
   }
 ];
 
